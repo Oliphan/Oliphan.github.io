@@ -1,0 +1,41 @@
+:root
+{
+	--palette-1: #1a1037;
+	--palette-2: #ffffff;
+	--palette-3: #f2f250;
+	--palette-4: #6462df;
+}
+
+body
+{
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	background-color: var(--palette-1);
+	color: var(--palette-2);
+}
+
+nav
+{
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	color: var(--palette-3);
+}
+
+header
+{
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row;
+	color: var(--palette-3);
+}
+
+.header-title
+{
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row;
+	color: var(--palette-3);
+	font-size: large;
+}

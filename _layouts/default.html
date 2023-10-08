@@ -5,32 +5,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>{{ page.title }}</title>
-		<link rel="stylesheet" href="/styles/page.css">
-		<link rel="stylesheet" href="/styles/header.css">
+		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
 		<header>
-			<a href="/#welcome" class="header-title">
-				Liam Robinson
-			</a>
-			<nav>
-				<div class="nav-toggle">
-					<span></span>
-					<span></span>
-					<span></span>
+			<div class="topbar">
+				<div class="row no-margin">
+					<a href="/#welcome" class="header-title">
+						Liam Robinson
+					</a>
+					<div class="nav-toggle">
+						<input type="checkbox">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 				</div>
-				<ol>
-					<li>
-						<a href="/#welcome"> Home </a>
-					</li>
-					<li>
-						<a href=""> My Projects </a>
-					</li>
-					<li>
-						<a href="/#contact"> Contact Me </a>
-					</li>
-				</ol>
-			</nav>
+				<nav>
+					<ol>
+						<li>
+							<a href="/#welcome"> Home </a>
+						</li>
+						<li>
+							<a href=""> My Projects </a>
+						</li>
+						<li>
+							<a href="/#contact"> Contact Me </a>
+						</li>
+					</ol>
+				</nav>
+			</div>
 		</header>
 		<main>
 			{{ content }}

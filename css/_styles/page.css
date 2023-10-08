@@ -22,13 +22,16 @@ title
 
 *
 {
-	margin: auto;
 	display: flex;
-	flex-grow: 1;
 	flex-direction: column;
 	text-align: center;
 	color: var(--text-main);
 	align-content: center;
+}
+
+p
+{
+	margin: auto;
 }
 
 h1
@@ -39,7 +42,7 @@ h1
 h1, h2, h3, h4, h5, h6
 {
 	color: var(--text-highlight);
-	margin-bottom: 0.5em;
+	margin: 0em auto 0.5em auto;
 }
 
 .spacer-1
@@ -63,26 +66,28 @@ h1, h2, h3, h4, h5, h6
 section
 {
 	margin: 1em auto;
-	max-width: 768px;
-	min-width: 768px;
+	width: 1180px;
 	background-color: var(--bg-secondary);
 	border-radius: 1em;
 	padding: 1em;
 }
 
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 1200px)
 {
 	section
 	{
-		min-width: auto;
-		margin-left: 0px;
-		margin-right: 0px;
+		width: 100%;
 	}
 }
 
 .row
 {
 	flex-direction: row;
+}
+
+.no-margin
+{
+	margin: 0px;
 }
 
 footer

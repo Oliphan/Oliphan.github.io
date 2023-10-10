@@ -63,6 +63,18 @@ h1, h2, h3, h4, h5, h6
 	margin-bottom: 3em;
 }
 
+.go-left
+{
+	margin-left: 0px;
+	margin-right: auto;
+}
+
+.go-right
+{
+	margin-right: 0px;
+	margin-left: auto;
+}
+
 section
 {
 	box-sizing: border-box;

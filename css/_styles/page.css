@@ -65,14 +65,23 @@ h1, h2, h3, h4, h5, h6
 
 section
 {
+	box-sizing: border-box;
 	margin: 1em auto;
-	width: 1180px;
+	width: 1150px;
 	background-color: var(--bg-secondary);
 	border-radius: 1em;
 	padding: 1em;
 }
 
-@media only screen and (max-width: 1200px)
+@media only screen and (max-width: 1300px)
+{
+	section
+	{
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 568px)
 {
 	section
 	{

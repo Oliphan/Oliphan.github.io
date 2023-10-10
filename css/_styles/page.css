@@ -85,9 +85,20 @@ section
 	flex-direction: row;
 }
 
+.col
+{
+	flex-direction: column;
+}
+
+
 .no-margin
 {
 	margin: 0px;
+}
+
+.grow
+{
+	flex-grow: 1;
 }
 
 footer

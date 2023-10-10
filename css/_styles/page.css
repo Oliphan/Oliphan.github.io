@@ -1,8 +1,8 @@
 :root
 {
 	--bg-primary: hsl(255, 25%, 15%);
-	--bg-secondary: hsl(255, 25%, 5%, 60%);
-	--bg-accent: hsl(255, 40%, 50%, 60%);
+	--bg-secondary: hsl(255, 25%, 7%);
+	--bg-accent: hsl(22, 100%, 62%);
 	--text-main: #ffffff;
 	--text-highlight: #f2f250;
 }

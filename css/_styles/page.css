@@ -9,8 +9,7 @@
 
 body
 {
-	font-family: 'Courier New', Courier, monospace;
-	background-color: var(--bg-primary);
+	font-family: "Lucida Console", Arial, sans-serif;
 	color: var(--text-highlight);
 	margin: 0px;
 }

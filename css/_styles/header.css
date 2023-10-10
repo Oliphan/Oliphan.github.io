@@ -22,20 +22,95 @@ header a
 	flex-shrink: 1;
 	flex-direction: row;
 	font-size: x-large;
+	border-style: solid;
+	border-color: var(--bg-accent);
+	border-radius: 2em;
+	border-width: 0em 0.2em 0em 0.2em;
 }
 
 .topbar
 {
-	margin: auto;
-	max-width: 1200px;
-	flex-direction: row;
 	flex-grow: 1;
+}
+
+.pre-nav
+{
+	flex-direction: row;
+}
+
+.topbar-contents
+{
+	flex-direction: row;
+	background-color: var(--bg-primary);
+}
+
+.topbar-aligner
+{
+	margin: auto;
+	flex-direction: row;
+}
+
+.topbar-always
+{
+	flex-direction: row;
+	margin: 0px;
+	flex-grow: 1;
+
+
+}
+
+.topbar-curve-container
+{
+	height: 1em;
+	flex-direction: row;
+}
+
+.topbar-curve
+{
+	height: 2em;
+	width: 1em;
+	border-style: solid;
+	border-color: var(--bg-accent);
+	border-radius: 1em 0 0em 0em;
+	border-width: 0.2em 0em 0em 0em;
+	box-shadow: 0 -1em 0 0 var(--bg-primary);
+}
+
+.topbar-curve-middle
+{
+	flex-grow: 1;
+	border-style: solid;
+	border-color: var(--bg-accent);
+	border-width: 0.2em 0 0 0;
+}
+
+.topbar-curve.go-left
+{
+	border-radius: 1em 0 0 0;
+}
+
+.topbar-curve.go-right
+{
+	border-radius: 0 1em 0 0;
 }
 
 @media only screen and (max-width: 768px)
 {
-	.topbar
+	.topbar-always
 	{
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+
+	.topbar-aligner
+	{
+		flex-direction: column;
+		margin: 0;
+	}
+
+	.topbar-contents
+	{
+		margin: 0px;
 		flex-direction: column;
 	}
 }

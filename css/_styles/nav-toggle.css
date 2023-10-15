@@ -1,0 +1,58 @@
+.nav-toggle
+{
+	position: relative;
+	display: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: transparent var(--accent) var(--accent) var(--accent);
+	padding: 0.2em;
+	border-radius: 0.5em;
+	flex-grow: 0;
+	margin: auto 2em auto auto;
+	width: 2.5em;
+	height: 2.5em;
+	display: none;
+	background-color: var(--bg-primary);
+	transition: var(--standard-transition-timing);
+}
+
+.nav-toggle:active
+{
+	filter: brightness(var(--press-brightness));
+}
+
+.nav-toggle:hover
+{
+	border-color: var(--accent);
+}
+
+.nav-toggle input
+{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	opacity: 0;
+}
+
+.nav-toggle span
+{
+	margin: 0.25em;
+	flex-grow: 1;
+	background-color: var(--accent);
+	transition: var(--standard-transition-timing);
+}
+
+.nav-toggle:hover span
+{
+	background-color: var(--accent);
+}
+
+@media only screen and (max-width: 768px)
+{
+	.nav-toggle
+	{
+		display: flex;
+	}
+}

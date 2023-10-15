@@ -1,0 +1,54 @@
+.background
+{
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	align-items: stretch;
+	flex-grow: 1;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	box-shadow: inset 0 -4em 2em -2em var(--bg-primary);
+	color: var(--accent);
+}
+
+.bg-cell
+{
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+@for $i from 1 through 200
+{
+	$range: 110;
+	$offset: 5;
+
+	$xStart: calc(random($range) - $offset)+vw;
+	$xEnd: calc(random($range) - $offset)+vw;
+	$yStart: calc(random($range) - $offset)+vh;
+	$yEnd: calc(random($range) - $offset)+vh;
+	.background .bg-cell:nth-child(#{$i})
+	{
+		animation: flash-#{$i} 60s infinite;
+		animation-delay: (random(40000)-40000)+ms;
+		animation-timing-function: linear;
+	}
+
+	@keyframes flash-#{$i} {
+		0% {
+			opacity: 0;
+			transform: translateX($xStart) translateY($yStart) rotateZ(calc(random(90) - 45)+deg);
+		}
+
+		50% {
+			opacity: 1;
+		}
+	
+		100% {
+			opacity: 0;
+			transform: translateX($xEnd) translateY($yEnd) rotateZ(calc(random(90) - 45)+deg);
+		}
+	}
+}

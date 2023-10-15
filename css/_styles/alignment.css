@@ -1,0 +1,104 @@
+.v-spacer-1
+{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.pad-h-1
+{
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+.pad-h-2
+{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.pad-h-3
+{
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.pad-h-4
+{
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
+.pad-h-5
+{
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+.row
+{
+	flex-direction: row;
+}
+
+.col
+{
+	flex-direction: column;
+}
+
+.no-margin
+{
+	margin: 0px;
+}
+
+.grow
+{
+	flex-grow: 1;
+}
+
+.center
+{
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+
+.center-v
+{
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.center-h
+{
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.left
+{
+	text-align: left;
+	align-content: left;
+	justify-content: left;
+	align-items: left;
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.right
+{
+	text-align: right;
+	align-content: right;
+	justify-content: right;
+	align-items: right;
+	margin-right: 0;
+	margin-left: auto;
+}

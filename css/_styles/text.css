@@ -1,0 +1,43 @@
+*
+{
+	font-family: 'Courier New', Courier, monospace;
+	text-shadow: 2px 2px 3px #000;
+}
+
+p
+{
+	margin: auto;
+}
+
+h1
+{
+	font-size: xx-large;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	margin: 0em auto 0.5em auto;
+}
+
+a
+{
+	color: var(--accent);
+}
+
+a:active
+{
+	filter:brightness(var(--press-brightness));
+}
+
+.pip
+{
+	background-color: var(--text-main);
+	height: .5em;
+	width: .5em;
+	min-height: .5em;
+	min-width: .5em;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}

@@ -1,9 +1,15 @@
-
-body
+html, body, main
 {
-	font-family: "Lucida Console", Arial, sans-serif;
-	color: var(--text-highlight);
+	background-color: var(--bg-primary);
 	margin: 0px;
+	height: 100%;
+}
+
+main
+{
+	position: relative;
+	overflow: hidden;
+	color: var(--text-main);
 }
 
 title
@@ -17,69 +23,43 @@ title
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	color: var(--text-main);
 	align-content: center;
 }
 
-p
+.page-content-scroll
 {
-	margin: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100%;
+	perspective: 10px;
+	perspective-origin: bottom;
 }
 
-h1
+.page-content
 {
-	font-size: xx-large;
-}
-
-h1, h2, h3, h4, h5, h6
-{
-	color: var(--text-highlight);
-	margin: 0em auto 0.5em auto;
-}
-
-.spacer-1
-{
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-
-.spacer-2
-{
-	margin-top: 2em;
-	margin-bottom: 2em;
-}
-
-.spacer-3
-{
-	margin-top: 3em;
-	margin-bottom: 3em;
-}
-
-.go-left
-{
-	margin-left: 0px;
-	margin-right: auto;
-}
-
-.go-right
-{
-	margin-right: 0px;
+	width: 1150px;
 	margin-left: auto;
+	margin-right: auto;
 }
 
 section
 {
 	box-sizing: border-box;
 	margin: 1em auto;
-	width: 1150px;
 	background-color: var(--bg-secondary);
 	border-radius: 1em;
 	padding: 1em;
+	width: 100%;
+}
+
+footer
+{
+	margin-top: 2em;
 }
 
 @media only screen and (max-width: 1300px)
 {
-	section
+	.page-content
 	{
 		width: 90%;
 	}
@@ -87,34 +67,8 @@ section
 
 @media only screen and (max-width: 568px)
 {
-	section
+	.page-content
 	{
 		width: 100%;
 	}
-}
-
-.row
-{
-	flex-direction: row;
-}
-
-.col
-{
-	flex-direction: column;
-}
-
-
-.no-margin
-{
-	margin: 0px;
-}
-
-.grow
-{
-	flex-grow: 1;
-}
-
-footer
-{
-	margin-top: 2em;
 }

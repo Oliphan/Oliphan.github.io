@@ -1,0 +1,19 @@
+*::-webkit-scrollbar {
+	background-color: var(--bg-primary);
+	width: 1em;
+}
+
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track-piece {
+	background-color: #00000000;
+	display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(to right, var(--bg-primary), var(--bg-secondary));
+	border-style: solid;
+	border-color: var(--accent);
+	border-width: 1px 0 1px 1px;
+	border-radius: 1em;
+}

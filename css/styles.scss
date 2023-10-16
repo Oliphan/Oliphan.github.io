@@ -1,12 +1,13 @@
 ---
 ---
 
-@import "_styles/theme.scss";
-@import "_styles/page";
-@import "_styles/text";
-@import "_styles/alignment";
-@import "_styles/header";
-@import "_styles/navbar";
-@import "_styles/nav-toggle";
-@import "_styles/background.scss";
-@import "_styles/scrollbar";
+@import
+	"_styles/theme",
+	"_styles/page",
+	"_styles/text",
+	"_styles/alignment",
+	"_styles/header",
+	"_styles/navbar",
+	"_styles/nav-toggle",
+	"_styles/background",
+	"_styles/scrollbar";

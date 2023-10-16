@@ -20,15 +20,26 @@
 	position: absolute;
 }
 
+@function CalcRand($range, $offset, $unit)
+{
+	$rand: random($range) - $offset;
+	$withUnit: $rand + $unit;
+	@return $withUnit
+}
+
 @for $i from 1 through 200
 {
 	$range: 110;
 	$offset: 5;
 
-	$xStart: calc(random($range) - $offset)+vw;
-	$xEnd: calc(random($range) - $offset)+vw;
-	$yStart: calc(random($range) - $offset)+vh;
-	$yEnd: calc(random($range) - $offset)+vh;
+	$xStart: CalcRand($range, $offset, vw);
+	$xEnd: CalcRand($range, $offset, vw);
+	$yStart: CalcRand($range, $offset, vh);
+	$yEnd: CalcRand($range, $offset, vh);
+
+	$rotStart: CalcRand(90, 45, deg);
+	$rotEnd: CalcRand(90, 45, deg);
+
 	.background .bg-cell:nth-child(#{$i})
 	{
 		animation: flash-#{$i} 60s infinite;
@@ -39,7 +50,7 @@
 	@keyframes flash-#{$i} {
 		0% {
 			opacity: 0;
-			transform: translateX($xStart) translateY($yStart) rotateZ(calc(random(90) - 45)+deg);
+			transform: translateX(#{$xStart}) translateY(#{$yStart}) rotateZ(#{$rotStart});
 		}
 
 		50% {
@@ -48,7 +59,7 @@
 	
 		100% {
 			opacity: 0;
-			transform: translateX($xEnd) translateY($yEnd) rotateZ(calc(random(90) - 45)+deg);
+			transform: translateX(#{$xEnd}) translateY(#{$yEnd}) rotateZ(#{$rotEnd});
 		}
 	}
 }

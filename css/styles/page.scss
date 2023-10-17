@@ -31,8 +31,12 @@ title
 	overflow-y: auto;
 	overflow-x: hidden;
 	height: 100%;
-	perspective: 10px;
-	perspective-origin: bottom;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.page-content-scroll::-webkit-scrollbar {
+	display: none;
 }
 
 .page-content

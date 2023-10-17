@@ -1,8 +1,12 @@
 html, body, main
 {
-	background-color: var(--bg-primary);
 	margin: 0px;
 	height: 100%;
+}
+
+body
+{
+	background-color: var(--bg-primary);
 }
 
 main
@@ -49,11 +53,12 @@ title
 section
 {
 	box-sizing: border-box;
-	margin: 1em auto;
+	margin: 3em auto;
 	background-color: var(--bg-secondary);
 	border-radius: 1em;
 	padding: 1em;
 	width: 100%;
+	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
 }
 
 footer

@@ -16,11 +16,6 @@ main
 	color: var(--text-main);
 }
 
-title
-{
-	display: none;
-}
-
 *
 {
 	box-sizing: border-box;
@@ -28,6 +23,11 @@ title
 	flex-direction: column;
 	text-align: center;
 	align-content: center;
+}
+
+head *
+{
+	display: none;
 }
 
 .page-content-scroll

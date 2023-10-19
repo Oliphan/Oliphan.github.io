@@ -54,31 +54,29 @@
 	flex-grow: 1;
 }
 
+.center-h,
+.center-v,
 .center
 {
 	text-align: center;
 	align-content: center;
 	justify-content: center;
 	align-items: center;
+}
+
+.center
+{
 	margin: auto;
 }
 
 .center-v
 {
-	text-align: center;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
 	margin-top: auto;
 	margin-bottom: auto;
 }
 
 .center-h
 {
-	text-align: center;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
 	margin-right: auto;
 	margin-left: auto;
 }

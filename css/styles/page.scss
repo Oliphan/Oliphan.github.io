@@ -46,9 +46,10 @@ head *
 
 .page-content
 {
-	width: 1150px;
+	width: min(1150px, 90%);
 	margin-left: auto;
 	margin-right: auto;
+	transition: all var(--standard-transition-timing);
 }
 
 section
@@ -71,7 +72,7 @@ footer
 {
 	.page-content
 	{
-		width: 90%;
+		width: max(568px, 90%);
 	}
 }
 

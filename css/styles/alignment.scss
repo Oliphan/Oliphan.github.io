@@ -102,3 +102,26 @@
 	margin-right: 0;
 	margin-left: auto;
 }
+
+.responsive-row-col
+{
+	display: flex;
+	flex-direction: row;
+	transition: all var(--standard-transition-timing);
+}
+
+@media only screen and (max-width: 568px)
+{
+	.responsive-row-col
+	{
+		flex-direction: column;
+	}
+
+	@for $i from 1 through 5
+	{
+		.responsive-order-#{$i}
+		{
+			order: #{$i};
+		}
+	}
+}

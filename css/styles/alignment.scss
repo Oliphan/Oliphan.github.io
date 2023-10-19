@@ -30,14 +30,19 @@
 	flex-grow: 1;
 }
 
+@mixin align-all($alignment)
+{
+	text-align: #{$alignment};
+	align-content: #{$alignment};
+	justify-content: #{$alignment};
+	align-items: #{$alignment};
+}
+
 .center-h,
 .center-v,
 .center
 {
-	text-align: center;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
+	@include align-all(center);
 }
 
 .center
@@ -57,24 +62,21 @@
 	margin-left: auto;
 }
 
+@mixin horizontal-align($side, $opposite)
+{
+	@include align-all($side);
+	margin-#{$opposite}: auto;
+	margin-#{$side}: 0;
+}
+
 .left
 {
-	text-align: left;
-	align-content: left;
-	justify-content: left;
-	align-items: left;
-	margin-right: auto;
-	margin-left: 0;
+	@include horizontal-align(left, right);
 }
 
 .right
 {
-	text-align: right;
-	align-content: right;
-	justify-content: right;
-	align-items: right;
-	margin-right: 0;
-	margin-left: auto;
+	@include horizontal-align(right, left);
 }
 
 

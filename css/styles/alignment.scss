@@ -57,6 +57,27 @@
 	margin-left: auto;
 }
 
+.left
+{
+	text-align: left;
+	align-content: left;
+	justify-content: left;
+	align-items: left;
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.right
+{
+	text-align: right;
+	align-content: right;
+	justify-content: right;
+	align-items: right;
+	margin-right: 0;
+	margin-left: auto;
+}
+
+
 .responsive-row-col
 {
 	display: flex;

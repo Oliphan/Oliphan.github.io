@@ -41,10 +41,10 @@ nav a:hover
 	nav
 	{
 		margin: 0px;
-		display: none;
-		opacity: 0;
+		display: flex;
+		height: 0px;
 		pointer-events: none;
-		transition: var(--standard-transition-timing);
+		transition: all var(--standard-transition-timing);
 		background-color: var(--bg-secondary);
 	}
 
@@ -61,10 +61,9 @@ nav a:hover
 		padding-bottom: 2em;
 	}
 
-	.topbar :has(input:checked) ~ nav
+	.topbar :has(.nav-toggle .nav-toggle-activator:focus-within) nav,
+	nav:focus-within
 	{
-		display: flex;
-		opacity: 1;
 		height: auto;
 		pointer-events: all;
 	}

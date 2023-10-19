@@ -16,17 +16,8 @@
 	transition: var(--standard-transition-timing);
 }
 
-.nav-toggle:active
-{
-	filter: brightness(var(--press-brightness));
-}
-
-.nav-toggle:hover
-{
-	border-color: var(--accent);
-}
-
-.nav-toggle input
+.nav-toggle-activator,
+.nav-toggle-deactivator
 {
 	position: absolute;
 	top: 0px;
@@ -34,6 +25,37 @@
 	left: 0px;
 	right: 0px;
 	opacity: 0;
+}
+
+.nav-toggle-activator,
+.topbar:has(.nav-toggle-activator:focus-within) .nav-toggle-deactivator,
+.topbar:has(nav:focus-within) .nav-toggle-deactivator
+{
+	pointer-events: all;
+}
+
+.nav-toggle-activator:focus-within,
+.topbar:has(nav:focus-within) .nav-toggle-activator,
+.nav-toggle-deactivator:focus-within,
+.nav-toggle-deactivator
+{
+	pointer-events: none;
+}
+
+.nav-toggle:has(.nav-toggle-activator:focus-within)
+{
+	border-color: var(--accent);
+}
+
+.nav-toggle:has(.nav-toggle-activator:active),
+.nav-toggle:has(.nav-toggle-deactivator:active)
+{
+	filter: brightness(var(--press-brightness));
+}
+
+.nav-toggle:hover
+{
+	border-color: var(--accent);
 }
 
 .nav-toggle span

@@ -16,7 +16,8 @@
 							Liam Robinson
 						</div>
 						<div class="nav-toggle">
-							<input type="checkbox">
+							<div class="nav-toggle-activator" tabindex="-1"></div>
+							<div class="nav-toggle-deactivator" tabindex="-2"></div>
 							<span></span>
 							<span></span>
 							<span></span>
@@ -25,13 +26,13 @@
 					<nav>
 						<ol>
 							<li>
-								<a href="/#welcome"> Home </a>
+								<a tabindex="1" href="/#welcome" onclick="this.blur();"> Home </a>
 							</li>
 							<li>
-								<a href="/#projects"> My Projects </a>
+								<a tabindex="2" href="/#projects" onclick="this.blur();"> My Projects </a>
 							</li>
 							<li>
-								<a href="/#contact"> Contact Me </a>
+								<a tabindex="3" href="/#contact" onclick="this.blur();"> Contact Me </a>
 							</li>
 						</ol>
 					</nav>

@@ -42,7 +42,8 @@
 	pointer-events: none;
 }
 
-.nav-toggle:has(.nav-toggle-activator:focus-within)
+.nav-toggle:has(.nav-toggle-activator:focus-within),
+.nav-toggle:hover
 {
 	border-color: var(--accent);
 }
@@ -51,11 +52,6 @@
 .nav-toggle:has(.nav-toggle-deactivator:active)
 {
 	filter: brightness(var(--press-brightness));
-}
-
-.nav-toggle:hover
-{
-	border-color: var(--accent);
 }
 
 .nav-toggle span

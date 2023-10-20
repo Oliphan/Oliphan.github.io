@@ -1,5 +1,6 @@
 html, body, main
 {
+	@include flex(column);
 	margin: 0px;
 	height: 100%;
 }
@@ -45,6 +46,7 @@ head *
 
 section
 {
+	@include flex(column);
 	box-sizing: border-box;
 	margin: 3em auto;
 	background-color: var(--bg-secondary);

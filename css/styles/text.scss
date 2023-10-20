@@ -6,22 +6,28 @@
 
 p
 {
+	@include align-all(center);
+	@include default-text;
 	margin: auto;
 }
 
 h1
 {
+	@include default-text;
 	font-size: xx-large;
 	filter: drop-shadow(0.15em 0.15em 0.1em var(--drop-shadow-color));
 }
 
 h1, h2, h3, h4, h5, h6
 {
+	@include flex(column);
+	@include default-text;
 	margin: 0em auto 0.5em auto;
 }
 
 a
 {
+	@include default-text;
 	color: var(--accent);
 }
 

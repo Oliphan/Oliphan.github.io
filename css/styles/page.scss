@@ -48,11 +48,15 @@ section
 {
 	@include flex(column);
 	box-sizing: border-box;
-	margin: 3em auto;
+	margin: 2em auto;
+	width: 100%;
+}
+
+.foreground-panel
+{
 	background-color: var(--bg-secondary);
 	border-radius: 1em;
 	padding: 1em;
-	width: 100%;
 	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
 }
 

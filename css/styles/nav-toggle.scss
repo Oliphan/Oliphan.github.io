@@ -28,14 +28,14 @@
 }
 
 .nav-toggle-activator,
-.topbar:has(.nav-toggle-activator:focus-within) .nav-toggle-deactivator,
-.topbar:has(nav:focus-within) .nav-toggle-deactivator
+:has(.nav-toggle-activator:focus-within) .nav-toggle-deactivator,
+:has(nav:focus-within) .nav-toggle-deactivator
 {
 	pointer-events: all;
 }
 
 .nav-toggle-activator:focus-within,
-.topbar:has(nav:focus-within) .nav-toggle-activator,
+:has(nav:focus-within) .nav-toggle-activator,
 .nav-toggle-deactivator:focus-within,
 .nav-toggle-deactivator
 {

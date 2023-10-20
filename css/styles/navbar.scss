@@ -61,7 +61,7 @@ nav a:hover
 		padding-bottom: 2em;
 	}
 
-	.topbar :has(.nav-toggle .nav-toggle-activator:focus-within) nav,
+	:has(.nav-toggle .nav-toggle-activator:focus-within) nav,
 	nav:focus-within
 	{
 		height: auto;

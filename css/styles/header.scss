@@ -1,9 +1,8 @@
 header
 {
+	@include flex(row, grow);
 	z-index: 1;
 	margin: 0px;
-	flex-grow: 1;
-	flex-direction: row;
 	position: sticky;
   	top: 0;
 	background-color: var(--bg-secondary);
@@ -19,11 +18,11 @@ header a
 
 .header-title
 {
+	@include default-text;
+	@include flex(row, shrink);
 	padding: .5em 1em .5em 1em;
 	margin-right: auto;
 	font-weight: bold;
-	flex-shrink: 1;
-	flex-direction: row;
 	font-size: x-large;
 }
 
@@ -32,26 +31,17 @@ header a
 	flex-direction: row;
 }
 
-.topbar
-{
-	flex-grow: 1;
-	flex-direction: row;
-}
-
 .topbar-aligner
 {
+	@include flex(row);
 	margin: auto;
 	width: 1000px;
-	flex-direction: row;
 }
 
 .topbar-always
 {
-	flex-direction: row;
+	@include flex(row, grow);
 	margin: 0px;
-	flex-grow: 1;
-
-
 }
 
 @media only screen and (max-width: 1000px)

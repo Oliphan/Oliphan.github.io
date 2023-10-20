@@ -1,7 +1,8 @@
 nav ol,
 nav
 {
-	flex-direction: row;
+	@include flex(row);
+	box-sizing: border-box;
 	font-size: large;
 	padding-inline-start: 0px;
 	margin-block-start: 0px;
@@ -12,10 +13,11 @@ nav
 
 nav a
 {
+	@include flex(column, grow);
+	box-sizing: border-box;
 	width: 100%;
 	padding: .5em 1.5em .5em 1.5em;
 	position: relative;
-	flex-grow: 1;
 	text-align: center;
 	justify-content: center;
 	transition: var(--standard-transition-timing);
@@ -23,6 +25,12 @@ nav a
 	border-width: 1px;
 	border-color: transparent;
 	border-radius: 1em;
+}
+
+nav li
+{
+	@include flex(column);
+	list-style-type: none;
 }
 
 nav a:active

@@ -1,3 +1,31 @@
+@mixin flex($direction: null, $shrinkGrow: null)
+{
+	display: flex;
+	@if ($direction)
+	{
+		flex-direction: #{$direction};
+	}
+	@if ($shrinkGrow)
+	{
+		flex-#{$shrinkGrow}: 1;
+	}
+}
+
+.row
+{
+	@include flex(row);
+}
+
+.col
+{
+	@include flex(column);
+}
+
+.grow
+{
+	flex-grow: 1;
+}
+
 .v-spacer-small
 {
 	margin-top: 0.5em;
@@ -10,24 +38,9 @@
 	padding-right: 2em;
 }
 
-.row
-{
-	flex-direction: row;
-}
-
-.col
-{
-	flex-direction: column;
-}
-
 .no-margin
 {
 	margin: 0px;
-}
-
-.grow
-{
-	flex-grow: 1;
 }
 
 @mixin align-all($alignment)

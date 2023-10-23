@@ -1,0 +1,124 @@
+.envelope
+{
+	z-index: 1;
+	@include flex(column, grow);
+	@include foregroundPanel;
+	position: relative;
+	margin: 2em 1em 2em 1em;
+	height: 10em;
+	transition: var(--standard-transition-timing);
+}
+
+.envelope:hover
+{
+	transform: translateY(4em);
+}
+
+.envelope-contents
+{
+	@include flex;
+	
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	word-wrap: break-word;
+	justify-content: center;
+	align-items: center;
+	transition: var(--standard-transition-timing);
+	word-wrap: break-word;
+	text-align : center;
+	text-decoration: none;
+	transform: scale(2);
+	pointer-events: none;
+}
+
+.envelope:hover .envelope-contents
+{
+	transform: translateY(-5em) scale(2);
+}
+
+.envelope-label
+{
+	@include default-text;
+	@include flex;
+	position: absolute;
+	top:  0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: flex-end;
+	justify-content: center;
+	margin-bottom: 1em;
+	font-weight: 600;
+}
+
+.envelope-flap
+{
+	z-index: 1;
+	position: absolute;
+	background-color: var(--bg-secondary);
+	top: 0;
+	bottom: 51%;
+	right: 1em;
+	left: 1em;
+	clip-path: polygon(0 0, 50% 100%, 100% 0);
+	transform-origin: top center;
+	transform: scaleY(100%);
+	transition: var(--standard-transition-timing);
+}
+
+.envelope:hover .envelope-flap
+{
+	transform: scaleY(-100%);
+	animation-duration: var(--standard-transition-timing);
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+	animation-name: open-envelope;
+}
+
+@keyframes open-envelope
+{
+	from
+	{
+		z-index: 1;
+	}
+	to
+	{
+		z-index: -1;
+	}
+}
+
+.envelope-fold-right,
+.envelope-fold-left
+{
+	--line-color: black;
+	background-color: var(--bg-secondary);
+	position: absolute;
+	border-radius: 1em;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.envelope-fold-right
+{
+	background: linear-gradient(
+		to top left,
+		var(--bg-secondary) calc(51% - .25em),
+		var(--line-color) calc(51% - .25em),
+		var(--line-color) 51%,
+		transparent 51%);
+}
+
+.envelope-fold-left
+{
+	background: linear-gradient(
+		to top right,
+		var(--bg-secondary) calc(51% - .25em),
+		var(--line-color) calc(51% - .25em),
+		var(--line-color) 51%,
+		transparent 51%);
+}

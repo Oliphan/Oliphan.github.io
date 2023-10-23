@@ -22,6 +22,4 @@ exclude:
   - .jekyll-cache/
   - .vscode/
   - .gitignore
-  - Gemfile
-  - Gemfile.lock
   - docker-compose.yml

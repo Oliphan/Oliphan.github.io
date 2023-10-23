@@ -52,12 +52,21 @@ section
 	width: 100%;
 }
 
-.foreground-panel
+.small-padding
+{
+	padding: 1em;
+}
+
+@mixin foregroundPanel
 {
 	background-color: var(--bg-secondary);
 	border-radius: 1em;
-	padding: 1em;
 	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
+}
+
+.foreground-panel
+{
+	@include foregroundPanel;
 }
 
 footer

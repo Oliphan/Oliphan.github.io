@@ -32,10 +32,36 @@
 	margin-bottom: 0.5em;
 }
 
-.pad-h-2
+@mixin pad-h($amount)
 {
-	padding-left: 2em;
-	padding-right: 2em;
+	padding-left: $amount;
+	padding-right: $amount;
+}
+
+@mixin pad-v($amount)
+{
+	padding-top: $amount;
+	padding-bottom: $amount;
+}
+
+.small-padding
+{
+	padding: 1em;
+}
+
+.small-v-padding
+{
+	@include pad-v(1em); 
+}
+
+.med-padding
+{
+	padding: 2em;
+}
+
+.med-h-padding
+{
+	@include pad-h(2em); 
 }
 
 .no-margin

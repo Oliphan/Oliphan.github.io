@@ -4,7 +4,7 @@
 	@include flex(column, grow);
 	@include foregroundPanel;
 	position: relative;
-	margin: 2em 1em 2em 1em;
+	margin: 2em 1em 1em 1em;
 	height: 10em;
 	transition: var(--standard-transition-timing);
 }
@@ -121,4 +121,12 @@
 		var(--line-color) calc(51% - .25em),
 		var(--line-color) 51%,
 		transparent 51%);
+}
+
+@media only screen and (max-width: 568px)
+{
+	.envelope
+	{
+		margin: 2em 1em 2em 1em;
+	}
 }

@@ -127,8 +127,24 @@
 	transition: all var(--standard-transition-timing);
 }
 
+.responsive-spacer-tiny,
+.responsive-spacer-small
+{
+	display: flex;
+}
+
 @media only screen and (max-width: 568px)
 {
+	.responsive-spacer-tiny
+	{
+		@include pad-v(.5em); 
+	}
+	
+	.responsive-spacer-small
+	{
+		@include pad-v(1em); 
+	}
+	
 	.responsive-row-col
 	{
 		flex-direction: column;

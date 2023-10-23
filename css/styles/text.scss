@@ -2,12 +2,18 @@
 {
 	font-family: 'Courier New', Courier, monospace;
 	text-shadow: 2px 2px 3px var(--drop-shadow-color);
-	letter-spacing: .2em;
+	letter-spacing: .15em;
+}
+
+@mixin align-text($align, $align-last: $align)
+{
+	text-align: $align;
+	text-align-last: $align-last;
 }
 
 p
 {
-	@include align-all(center);
+	@include align-text(justify, center);
 	@include default-text;
 	margin: auto;
 	line-height: 2em;

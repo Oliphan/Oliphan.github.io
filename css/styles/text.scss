@@ -2,6 +2,7 @@
 {
 	font-family: 'Courier New', Courier, monospace;
 	text-shadow: 2px 2px 3px var(--drop-shadow-color);
+	letter-spacing: .2em;
 }
 
 p
@@ -9,6 +10,7 @@ p
 	@include align-all(center);
 	@include default-text;
 	margin: auto;
+	line-height: 2em;
 }
 
 h1
@@ -23,6 +25,7 @@ h1, h2, h3, h4, h5, h6
 	@include flex(column);
 	@include default-text;
 	margin: 0em auto 0.5em auto;
+	letter-spacing: -.05em;
 }
 
 a

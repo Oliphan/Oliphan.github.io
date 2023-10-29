@@ -1,8 +1,18 @@
-@mixin default-text
+@mixin default-text(
+	$letter-spacing: var(--body-letter-spacing),
+	$line-height: var(--body-line-height),
+	$weight: normal)
 {
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	text-shadow: 2px 2px 3px var(--drop-shadow-color);
-	letter-spacing: .15em;
+	letter-spacing: #{$letter-spacing};
+	line-height: #{$line-height};
+	font-weight: #{$weight};
+}
+
+@mixin title-text($weight: normal)
+{
+	@include default-text(var(--title-letter-spacing), var(--title-line-height), $weight);
 }
 
 @mixin align-text($align, $align-last: $align)
@@ -16,12 +26,11 @@ p
 	@include align-text(justify, center);
 	@include default-text;
 	margin: auto;
-	line-height: 2em;
 }
 
 h1
 {
-	@include default-text;
+	@include title-text;
 	font-size: xx-large;
 	filter: drop-shadow(0.15em 0.15em 0.1em var(--drop-shadow-color));
 }
@@ -29,9 +38,8 @@ h1
 h1, h2, h3, h4, h5, h6
 {
 	@include flex(column);
-	@include default-text;
+	@include title-text;
 	margin: 0em auto 0.5em auto;
-	letter-spacing: -.05em;
 }
 
 a
@@ -42,7 +50,7 @@ a
 
 a:active
 {
-	filter:brightness(var(--press-brightness));
+	@include active-press;
 }
 
 .pip

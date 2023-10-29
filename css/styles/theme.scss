@@ -6,7 +6,36 @@
 	--accent: hsl(189, 100%, 72%);
 	--highlight: hsl(22, 100%, 63%);
 	--text-main: #ffffff;
-	--press-brightness: 70%;
 	--drop-shadow-color: rgba(0, 0, 0, 0.9);
+	--press-brightness: 70%;
+
 	--standard-transition-timing: 0.2s;
+
+	--body-letter-spacing: 0.15em;
+	--body-line-height: 2em;
+	--title-letter-spacing: -0.05em;
+	--title-line-height: 1em;
+
+	--standard-border-radius: 15px;
+
+	--header-size: 50px;
+}
+
+@mixin smooth-border
+{
+	border-radius: var(--standard-border-radius);
+}
+
+@mixin highlight-glow
+{
+	@include smooth-border;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--accent);
+	filter: drop-shadow(1px 1px 3px var(--highlight));	
+}
+
+@mixin active-press
+{
+	filter: brightness(var(--press-brightness));
 }

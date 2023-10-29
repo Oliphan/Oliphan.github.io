@@ -14,6 +14,8 @@ repository: Oliphan/Oliphan.github.io
 sass:
   style: compressed
   sass_dir: css
+  load_paths:
+    - _styles/
 
 assets:
   compress:

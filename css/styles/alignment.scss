@@ -32,10 +32,36 @@
 	margin-bottom: 0.5em;
 }
 
-.pad-h-2
+@mixin pad-h($amount)
 {
-	padding-left: 2em;
-	padding-right: 2em;
+	padding-left: $amount;
+	padding-right: $amount;
+}
+
+@mixin pad-v($amount)
+{
+	padding-top: $amount;
+	padding-bottom: $amount;
+}
+
+.small-padding
+{
+	padding: 1em;
+}
+
+.small-v-padding
+{
+	@include pad-v(1em); 
+}
+
+.med-padding
+{
+	padding: 2em;
+}
+
+.med-h-padding
+{
+	@include pad-h(2em); 
 }
 
 .no-margin
@@ -101,8 +127,24 @@
 	transition: all var(--standard-transition-timing);
 }
 
+.responsive-spacer-tiny,
+.responsive-spacer-small
+{
+	display: flex;
+}
+
 @media only screen and (max-width: 568px)
 {
+	.responsive-spacer-tiny
+	{
+		@include pad-v(.5em); 
+	}
+	
+	.responsive-spacer-small
+	{
+		@include pad-v(1em); 
+	}
+	
 	.responsive-row-col
 	{
 		flex-direction: column;

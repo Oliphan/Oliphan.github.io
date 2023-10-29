@@ -6,7 +6,7 @@ permalink: /
 
 <section id="#welcome">
 	<h1> Welcome </h1>
-	<div class="foreground-panel small-padding">
+	<div class="foreground-panel small-v-padding med-h-padding">
 		<p>
 			I'm Liam Robinson, a developer with a decade of experience working with a variety of different languages, frameworks, and technologies.
 		</p>
@@ -15,44 +15,23 @@ permalink: /
 
 <section id="#contact">
 	<h1> Contact Me </h1>
-	<div class="foreground-panel small-padding">
-		<p class="center-h v-spacer-small">If you would like to contact me you can do so in the following ways:</p>
+	<div class="foreground-panel small-v-padding med-h-padding">
+		<p>If you would like to contact me you can do so in the following ways:</p>
 	</div>
 	<div class="responsive-row-col">
-		<a href="mailto:liam.robinson.lmr@gmail.com" class="envelope">
-			<div class="envelope-contents">
-				@
-			</div>
-			<div class="envelope-fold-left">
-				
-			</div>
-			<div class="envelope-fold-right">
-				
-			</div>
-			<div class="envelope-flap">
-				
-			</div>
-			<div class="envelope-label">
-				Email
-			</div>
-		</a>
-		<a href="https://www.linkedin.com/in/liam-robinson-457226122" class="envelope">
-			<div class="envelope-flap">
-				
-			</div>
-			<div class="envelope-contents">
-				LinkedIn
-			</div>
-			<div class="envelope-fold-left">
-				
-			</div>
-			<div class="envelope-fold-right">
-				
-			</div>
-			<div class="envelope-label">
-				LinkedIn
-			</div>
-		</a>
+		{% include
+			envelope.html
+			link="mailto:liam.robinson.lmr@gmail.com"
+			contents="liam<wbr>.robinson<wbr>.lmr<wbr>@gmail<wbr>.com"
+			label="Email"
+		%}
+		<div class="responsive-spacer-tiny"></div>
+		{% include
+			envelope.html
+			link="https://www.linkedin.com/in/liam-robinson-457226122"
+			contents="Liam <wbr>Robinson"
+			label="LinkedIn"
+		%}
 	</div>
 </section>
 

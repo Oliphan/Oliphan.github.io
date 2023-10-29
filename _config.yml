@@ -8,10 +8,14 @@ baseurl: ""
 url: "oliphan.github.io"
 github_username: oliphan
 
+repository: Oliphan/Oliphan.github.io
+
 # Build settings
 sass:
   style: compressed
   sass_dir: css
+  load_paths:
+    - _styles/
 
 assets:
   compress:
@@ -20,6 +24,9 @@ assets:
 exclude:
   - _site/
   - .jekyll-cache/
+  - .sass-cache/
   - .vscode/
   - .gitignore
   - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock

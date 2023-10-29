@@ -17,6 +17,12 @@
 	transition: var(--standard-transition-timing);
 }
 
+.nav-toggle:hover
+{
+	@include highlight-glow;
+	border-radius: 0.5em;
+}
+
 .nav-toggle-activator,
 .nav-toggle-deactivator
 {
@@ -52,7 +58,7 @@
 .nav-toggle:has(.nav-toggle-activator:active),
 .nav-toggle:has(.nav-toggle-deactivator:active)
 {
-	filter: brightness(var(--press-brightness));
+	@include active-press;
 }
 
 .nav-toggle span

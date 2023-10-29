@@ -20,6 +20,9 @@ assets:
 exclude:
   - _site/
   - .jekyll-cache/
+  - .sass-cache/
   - .vscode/
   - .gitignore
   - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock

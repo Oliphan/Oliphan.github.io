@@ -1,4 +1,4 @@
-html, body, main
+html, body
 {
 	@include flex(column);
 	margin: 0px;
@@ -13,6 +13,10 @@ body
 
 main
 {
+	@include flex(column);
+	margin: 0px;
+	top: var(--header-size);
+	height: calc(100% - var(--header-size));
 	position: relative;
 	overflow: hidden;
 	color: var(--text-main);
@@ -33,7 +37,8 @@ head *
 	display: block;
 }
 
-.page-content-scroll::-webkit-scrollbar {
+.page-content-scroll::-webkit-scrollbar
+{
 	display: none;
 }
 
@@ -55,8 +60,8 @@ section
 
 @mixin foregroundPanel
 {
+	@include smooth-border;
 	background-color: var(--bg-secondary);
-	border-radius: 1em;
 	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
 }
 

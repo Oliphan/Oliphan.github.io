@@ -8,6 +8,8 @@ baseurl: ""
 url: "oliphan.github.io"
 github_username: oliphan
 
+repository: Oliphan/Oliphan.github.io
+
 # Build settings
 sass:
   style: compressed

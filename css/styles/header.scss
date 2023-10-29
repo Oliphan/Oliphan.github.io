@@ -3,8 +3,11 @@ header
 	@include flex(row, grow);
 	z-index: 1;
 	margin: 0px;
-	position: sticky;
+	position: fixed;
   	top: 0;
+	right:0;
+	left: 0;
+	height: var(--header-size);
 	background-color: var(--bg-secondary);
 	box-shadow: 0 0 1em 0 var(--drop-shadow-color);
 	color: var(--accent);
@@ -18,13 +21,13 @@ header a
 
 .header-title
 {
-	@include default-text;
+	@include title-text;
 	@include flex(row, shrink);
-	padding: .5em 1em .5em 1em;
+	@include align-all(center);
+	padding: 0 30px;
 	margin-right: auto;
-	font-weight: bold;
 	font-size: x-large;
-	letter-spacing: -.05em;
+	height: var(--header-size);
 }
 
 .pre-nav

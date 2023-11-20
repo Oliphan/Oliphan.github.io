@@ -39,3 +39,11 @@
 {
 	filter: brightness(var(--press-brightness));
 }
+
+@mixin appearance($value: none) {
+	-webkit-appearance: #{$value};
+	-moz-appearance: #{$value};
+	-ms-appearance: #{$value};
+	-o-appearance: #{$value};
+	appearance: #{$value};
+}

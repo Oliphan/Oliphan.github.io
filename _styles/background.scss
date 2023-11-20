@@ -11,6 +11,7 @@
 	bottom: 0;
 	box-shadow: inset 0 -4em 2em -2em var(--bg-primary);
 	color: var(--bg-secondary);
+	perspective: 100px;
 }
 
 .bg-cell
@@ -20,46 +21,69 @@
 	position: absolute;
 }
 
-@function CalcRand($range, $offset, $unit)
+@function CalcRand($range, $offset, $unit: null)
 {
-	$rand: random($range) - $offset;
-	$withUnit: $rand + $unit;
-	@return $withUnit
+	$rand: random($range) + $offset;
+	@if($unit)
+	{
+		@return $rand + $unit;
+	}
+	@return $rand;
 }
+
+
+$bg-anim-sections: 6;
+$bg-anim-section-length: 1 / $bg-anim-sections;
+$bg-anim-section-duration: 60000;
+$bg-anim-duration: $bg-anim-sections * $bg-anim-section-duration;
+$bg-anim-size-range: 100;
+$bg-anim-size-offset: -50;
+$bg-range: 110;
+$bg-offset: 5;
 
 @for $i from 1 through 200
 {
-	$range: 110;
-	$offset: 5;
-
-	$xStart: CalcRand($range, $offset, vw);
-	$xEnd: CalcRand($range, $offset, vw);
-	$yStart: CalcRand($range, $offset, vh);
-	$yEnd: CalcRand($range, $offset, vh);
-
-	$rotStart: CalcRand(90, 45, deg);
-	$rotEnd: CalcRand(90, 45, deg);
-
 	.background .bg-cell:nth-child(#{$i})
 	{
-		animation: flash-#{$i} 60s infinite;
-		animation-delay: (random(40000)-40000)+ms;
+		animation: flash-#{$i} #{$bg-anim-duration}ms infinite;
+		animation-delay: (random($bg-anim-duration) - $bg-anim-duration)+ms;
 		animation-timing-function: linear;
 	}
 
-	@keyframes flash-#{$i} {
-		0% {
-			opacity: 0;
-			transform: translateX(#{$xStart}) translateY(#{$yStart}) rotateZ(#{$rotStart});
-		}
+	@keyframes flash-#{$i}
+	{
+		@for $i from 1 through $bg-anim-sections
+		{
+			$xStart: CalcRand($bg-range, -$bg-offset, vw);
+			$xEnd: CalcRand($bg-range, -$bg-offset, vw);
+			$yStart: CalcRand($bg-range, -$bg-offset, vh);
+			$yEnd: CalcRand($bg-range, -$bg-offset, vh);
 
-		50% {
-			opacity: 1;
-		}
-	
-		100% {
-			opacity: 0;
-			transform: translateX(#{$xEnd}) translateY(#{$yEnd}) rotateZ(#{$rotEnd});
+			$rotStart: CalcRand(90, -45, deg);
+			$rotEnd: CalcRand(90, -45, deg);
+
+			$z-pos: CalcRand($bg-anim-size-range, $bg-anim-size-offset)+px;
+
+			$section-start: (($i)-1)*$bg-anim-section-length;
+			$section-mid: $section-start+($bg-anim-section-length/2.0);
+			$section-end: $section-start+$bg-anim-section-length;
+
+			#{percentage($section-start)}
+			{
+				opacity: 0;
+				transform: translateX(#{$xStart}) translateY(#{$yStart}) translateZ(#{$z-pos}) rotateZ(#{$rotStart}) ;
+			}
+
+			#{percentage($section-mid)}
+			{
+				opacity: 1;
+			}
+
+			#{percentage($section-end)}
+			{
+				opacity: 0;
+				transform: translateX(#{$xEnd}) translateY(#{$yEnd}) translateZ(#{$z-pos}) rotateZ(#{$rotEnd});
+			}
 		}
 	}
 }

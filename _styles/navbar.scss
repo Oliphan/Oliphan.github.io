@@ -23,7 +23,7 @@ nav
 	justify-content: space-evenly;
 }
 
-nav a
+nav .nav-item
 {
 	@include flex(column, grow);
 	@include smooth-border;
@@ -57,7 +57,7 @@ a:active
 	@include active-press;
 }
 
-nav a:hover
+nav .nav-item:hover
 {
 	@include highlight-glow;
 	border-color: var(--accent);
@@ -86,7 +86,7 @@ nav a:hover
 		flex-grow: 1;
 	}
 
-	nav a
+	nav .nav-item
 	{
 		padding-top: 2em;
 		padding-bottom: 2em;

@@ -103,9 +103,9 @@
 	position: absolute;
 	background-color: var(--bg-secondary);
 	top: 3px;
-	bottom: 51%;
-	right: 10px;
-	left: 10px;
+	bottom: 52%;
+	right: 14px;
+	left: 14px;
 	clip-path: polygon(0 0, 50% 100%, 100% 0);
 	transform-origin: top center;
 }
@@ -140,7 +140,7 @@
 .envelope-fold-right,
 .envelope-fold-left
 {
-	--line-color: black;
+	--line-color: var(--highlight);
 	@include smooth-border;
 	background-color: var(--bg-secondary);
 	position: absolute;
@@ -154,8 +154,8 @@
 {
 	background: linear-gradient(
 		to top left,
-		var(--bg-secondary) calc(51% - .25em),
-		var(--line-color) calc(51% - .25em),
+		var(--bg-secondary) calc(51% - 2px),
+		var(--line-color) calc(51% - 2px),
 		var(--line-color) 51%,
 		transparent 51%);
 }
@@ -164,8 +164,8 @@
 {
 	background: linear-gradient(
 		to top right,
-		var(--bg-secondary) calc(51% - .25em),
-		var(--line-color) calc(51% - .25em),
+		var(--bg-secondary) calc(51% - 2px),
+		var(--line-color) calc(51% - 2px),
 		var(--line-color) 51%,
 		transparent 51%);
 }

@@ -1,0 +1,42 @@
+.collapse > .collapse-content
+{
+	display: none;
+}
+
+.collapse:focus-within > .collapse-content
+{
+	display: flex;
+}
+
+.collapse:has(.collapse-activator:focus-within) .collapse-content
+{
+	height: auto;
+	pointer-events: all;
+}
+
+.collapse-activator,
+:has(.collapse-activator:focus-within) .collapse-deactivator,
+:has(nav:focus-within) .collapse-deactivator
+{
+	pointer-events: all;
+}
+
+.collapse-activator:focus-within,
+:has(nav:focus-within) .collapse-activator,
+.collapse-deactivator:focus-within,
+.collapse-deactivator
+{
+	pointer-events: none;
+}
+
+.collapse:has(.collapse-activator:focus-within),
+.collapse:hover
+{
+	border-color: var(--accent);
+}
+
+.collapse:has(.collapse-activator:active),
+.collapse:has(.collapse-deactivator:active)
+{
+	@include active-press;
+}

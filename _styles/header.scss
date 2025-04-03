@@ -1,9 +1,10 @@
 header
 {
-	@include flex(row, grow);
+	@include flex(row, 1 1 auto);
+	@include align-all(center);
 	z-index: 1;
 	margin: 0px;
-	position: fixed;
+	position: sticky;
   	top: 0;
 	right:0;
 	left: 0;
@@ -11,10 +12,14 @@ header
 	background-color: var(--bg-secondary);
 	box-shadow: 0 0 1em 0 var(--drop-shadow-color);
 	color: var(--accent);
+	line-height: var(--header-line-height);
+	letter-spacing: var(--header-letter-spacing);
 }
 
 header a
 {
+	line-height: var(--header-line-height);
+	letter-spacing: var(--header-letter-spacing);
 	color: var(--accent);
 	text-decoration: none;
 }
@@ -22,12 +27,12 @@ header a
 .header-title
 {
 	@include title-text;
-	@include flex(row, shrink);
+	@include flex(row, 1 1 auto);
 	@include align-all(center);
 	padding: 0 30px;
-	margin-right: auto;
 	font-size: x-large;
 	height: var(--header-size);
+	text-wrap: nowrap;
 }
 
 .pre-nav
@@ -37,9 +42,11 @@ header a
 
 .topbar-aligner
 {
-	@include flex(row);
+	@include flex(row, 1 1 auto);
+	@include align-all(center);
 	margin: auto;
 	width: 1000px;
+	max-height: 50px;
 }
 
 .topbar-always
@@ -58,6 +65,11 @@ header a
 
 @media only screen and (max-width: 768px)
 {
+	.topbar-always
+	{
+		width: 100%;
+	}
+
 	.topbar-aligner
 	{
 		flex-direction: column;

@@ -3,8 +3,8 @@
 	--bg-primary: hsl(239, 49%, 19%);
 	--bg-primary-gradient: hsl(239, 34%, 39%);
 	--bg-secondary: hsl(252, 70%, 7%);
-	--accent: hsl(32, 100%, 68%);
-	--highlight: hsl(36, 100%, 50%);
+	--accent: hsl(192, 100%, 68%);
+	--highlight: hsl(207, 100%, 50%);
 	--text-main: hsl(0, 0%, 100%);
 	--drop-shadow-color: rgba(0, 0, 0, 0.9);
 	--press-brightness: 70%;
@@ -19,6 +19,8 @@
 	--standard-border-radius: 15px;
 
 	--header-size: 50px;
+	--header-letter-spacing: 0.15em;
+	--header-line-height: 1.2em;
 }
 
 @mixin smooth-border

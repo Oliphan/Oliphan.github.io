@@ -10,8 +10,8 @@
 	border-radius: 0.5em;
 	flex-grow: 0;
 	margin: auto 2em auto auto;
-	min-width: 2.5em;
-	height: 2.5em;
+	max-width: 38px;
+	max-height: 38px;
 	display: none;
 	background-color: var(--bg-primary);
 	transition: var(--standard-transition-timing);
@@ -67,6 +67,7 @@
 	margin: 0.25em;
 	background-color: var(--accent);
 	transition: var(--standard-transition-timing);
+	height: 2px;
 }
 
 .nav-toggle:hover span
@@ -78,6 +79,6 @@
 {
 	.nav-toggle
 	{
-		@include flex(column);
+		@include flex(column, 1 1 auto);
 	}
 }

@@ -1,6 +1,7 @@
 nav
 {
 	transition: none;
+	height: 50px;
 }
 
 nav::-webkit-scrollbar,
@@ -12,13 +13,12 @@ nav ol::-webkit-scrollbar
 nav ol,
 nav
 {
-	@include flex(row);
+	@include flex(row, 1 1 auto);
 	box-sizing: border-box;
 	font-size: large;
 	padding-inline-start: 0px;
 	margin-block-start: 0px;
     margin-block-end: 0px;
-	margin-left: 1em;
 	overflow-y: auto;
 	justify-content: space-evenly;
 }
@@ -43,7 +43,7 @@ nav .nav-item
 
 nav li
 {
-	@include flex(column, grow);
+	@include align(center, center, center);
 	list-style-type: none;
 }
 

@@ -1,6 +1,6 @@
 html, body
 {
-	@include flex(column);
+	@include flex(column, 1 1 auto);
 	margin: 0px;
 	height: 100%;
 }
@@ -9,17 +9,17 @@ body
 {
 	background-color: var(--bg-primary); // Fallback
 	background: radial-gradient(var(--bg-primary-gradient) 50%, var(--bg-primary) 100%);
+	overflow: hidden;
 }
 
 main
 {
-	@include flex(column);
-	margin: 0px;
-	top: var(--header-size);
+	@include flex(column, 1 1 auto);
 	height: calc(100% - var(--header-size));
 	position: relative;
 	overflow: hidden;
 	color: var(--text-main);
+	top: 50px;
 }
 
 head *
@@ -35,6 +35,7 @@ head *
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	display: block;
+	scroll-behavior: smooth;
 }
 
 .page-content-scroll::-webkit-scrollbar
@@ -52,9 +53,13 @@ head *
 
 section
 {
-	@include flex(column);
+	&.section-with-chin
+	{
+		margin: 2em auto 4em auto;
+	}
+	@include flex(column, 1 1 auto);
 	box-sizing: border-box;
-	margin: 2em auto 4em auto;
+	margin: 2em auto 2em auto;
 	width: 100%;
 }
 

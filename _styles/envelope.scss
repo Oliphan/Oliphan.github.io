@@ -1,6 +1,6 @@
 .envelope-holder
 {
-	@include flex(column, grow);
+	@include flex(column, 1 1 auto);
 	perspective: 100px;
 }
 
@@ -11,7 +11,7 @@
 
 .envelope
 {
-	@include flex(column, grow);
+	@include flex(column, 1 1 auto);
 	@include foregroundPanel;
 	perspective: 100px;
 	z-index: 1;
@@ -29,7 +29,7 @@
 
 .envelope-contents
 {
-	@include flex;
+	@include flex(row, 1 1 auto);
 	@include smooth-border;
 	perspective: 100px;
 	position: absolute;
@@ -85,14 +85,14 @@
 .envelope-label
 {
 	@include default-text;
-	@include flex;
+	@include flex(column, 1 1 auto);
 	position: absolute;
 	top:  0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	align-items: flex-end;
-	justify-content: center;
+	align-items: center;
+	justify-content: end;
 	margin-bottom: 10px;
 	font-weight: 600;
 }

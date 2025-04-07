@@ -23,14 +23,13 @@
 
 .envelope-holder:hover .envelope
 {
-	@include highlight-glow;
 	transform: translateY(50px) translateZ(-50px);
 }
 
 .envelope-contents
 {
 	@include flex(row, 1 1 auto);
-	@include smooth-border;
+	@include foregroundPanel;
 	perspective: 100px;
 	position: absolute;
 	padding: 0.5em;
@@ -45,17 +44,20 @@
 	text-align : center;
 	text-decoration: none;
 	pointer-events: none;
-	background-color: var(--bg-primary);
 	overflow-wrap: anywhere;
 }
 
 .envelope-holder:hover .envelope-contents
 {
-	@include highlight-glow;
 	animation-duration: calc(var(--standard-transition-timing) * 3);
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
 	animation-name: open-envelope-contents;
+}
+
+.envelope-contents-body
+{
+	@include highlight-glow;
 }
 
 @keyframes open-envelope-contents

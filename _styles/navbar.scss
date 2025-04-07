@@ -34,7 +34,7 @@ nav .nav-item
 	text-align: center;
 	justify-content: center;
 	border-style: solid;
-	border-width: 1px;
+	border-width: 0px 0px 2px 0px;
 	border-color: transparent;
 	transition: 
 		border-color var(--standard-transition-timing), 
@@ -60,6 +60,7 @@ a:active
 nav .nav-item:hover
 {
 	@include highlight-glow;
+	border-width: 0px 0px 2px 0px;
 	border-color: var(--accent);
 }
 

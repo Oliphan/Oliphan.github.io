@@ -31,10 +31,8 @@
 @mixin highlight-glow
 {
 	@include smooth-border;
-	border-style: solid;
-	border-width: 1px;
 	border-color: var(--accent);
-	filter: drop-shadow(1px 1px 3px var(--highlight));	
+	filter: drop-shadow(1px 1px 3px var(--highlight));
 }
 
 @mixin active-press

@@ -19,7 +19,6 @@ main
 	position: relative;
 	overflow: hidden;
 	color: var(--text-main);
-	top: 50px;
 }
 
 head *
@@ -68,6 +67,9 @@ section
 	@include smooth-border;
 	background-color: var(--bg-secondary);
 	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
+	border-color: var(--highlight);
+	border-style: outset;
+	border-width: 2px;
 }
 
 .foreground-panel

@@ -152,7 +152,9 @@
 	| split: ",
 	" %}
 <div class="background row">
-	{% for keyword in keywords %}
-		<div class="bg-cell">{{ keyword }}</div>
-	{% endfor %}
+	<div class="background-anchor">
+		{% for keyword in keywords %}
+			<div class="bg-cell">{{ keyword }}</div>
+		{% endfor %}
+	</div>
 </div>

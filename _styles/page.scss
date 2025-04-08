@@ -1,4 +1,12 @@
-html, body
+html
+{
+	@include flex(column, 1 1 auto);
+	margin: 0px;
+	scroll-behavior: smooth;
+	scroll-padding-top: 50px; // Offset to account for topbar
+}
+
+body
 {
 	@include flex(column, 1 1 auto);
 	margin: 0px;
@@ -9,7 +17,6 @@ body
 {
 	background-color: var(--bg-primary); // Fallback
 	background: radial-gradient(var(--bg-primary-gradient) 50%, var(--bg-primary) 100%);
-	overflow: hidden;
 }
 
 main
@@ -17,7 +24,6 @@ main
 	@include flex(column, 1 1 auto);
 	height: calc(100% - var(--header-size));
 	position: relative;
-	overflow: hidden;
 	color: var(--text-main);
 }
 
@@ -75,11 +81,6 @@ section
 .foreground-panel
 {
 	@include foregroundPanel;
-}
-
-footer
-{
-	margin-top: 2em;
 }
 
 @media only screen and (max-width: 800px)

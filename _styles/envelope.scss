@@ -30,6 +30,8 @@
 {
 	@include flex(row, 1 1 auto);
 	@include foregroundPanel;
+	border-color: var(--accent);
+	border-style: solid;
 	perspective: 100px;
 	position: absolute;
 	padding: 0.5em;

@@ -27,14 +27,14 @@ nav .nav-item
 {
 	@include flex(column, grow);
 	@include smooth-border;
+	flex-basis: 100%;
 	box-sizing: border-box;
-	width: 100%;
 	padding: 0 1.5em;
 	position: relative;
 	text-align: center;
 	justify-content: center;
 	border-style: solid;
-	border-width: 0px 0px 2px 0px;
+	border-width: 0px 2px 0px 2px;
 	border-color: transparent;
 	transition: 
 		border-color var(--standard-transition-timing), 
@@ -43,8 +43,10 @@ nav .nav-item
 
 nav li
 {
-	@include align(center, center, center);
+	@include align(center, stretch, center);
 	list-style-type: none;
+	flex-basis: 100%;
+	justify-content: center;
 }
 
 nav li:active
@@ -60,8 +62,6 @@ a:active
 nav .nav-item:hover
 {
 	@include highlight-glow;
-	border-width: 0px 0px 2px 0px;
-	border-color: var(--accent);
 }
 
 @media only screen and (max-width: 768px)
@@ -91,6 +91,7 @@ nav .nav-item:hover
 	{
 		padding-top: 2em;
 		padding-bottom: 2em;
+		border-width: 2px 0px 2px 0spx;
 	}
 
 	:has(.nav-toggle .nav-toggle-activator:focus-within) nav,

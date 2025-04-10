@@ -2,6 +2,7 @@
 {
 	@include flex(column, 1 1 auto);
 	perspective: 100px;
+	align-items: normal;
 }
 
 .envelope-holder:active *
@@ -108,8 +109,8 @@
 	background-color: var(--bg-secondary);
 	top: 3px;
 	bottom: 52%;
-	right: 14px;
-	left: 14px;
+	right: 4%;
+	left: 4%;
 	clip-path: polygon(0 0, 50% 100%, 100% 0);
 	transform-origin: top center;
 }

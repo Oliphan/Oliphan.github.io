@@ -135,6 +135,11 @@
 	padding-bottom: $amount;
 }
 
+.no-padding
+{
+	padding: 0;
+}
+
 .small-padding
 {
 	padding: 1em;
@@ -153,6 +158,11 @@
 .med-h-padding
 {
 	@include pad-h(2em); 
+}
+
+.top-m1
+{
+	margin-top: 1em;
 }
 
 .no-margin

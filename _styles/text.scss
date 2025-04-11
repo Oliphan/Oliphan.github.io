@@ -39,12 +39,28 @@ h1, h2, h3, h4, h5, h6
 {
 	@include flex(column, 1 1 auto);
 	@include title-text;
+	@include align-all(center);
 	margin: 0em auto 0.5em auto;
+
+	a
+	{
+		@include flex(column, 1 1 auto);
+		@include title-text;
+		@include align-all(center);
+		color: var(--accent);
+	}
+
+	&.left
+	{
+		margin: auto 0.5em auto 0em;
+	}
 }
 
 a
 {
+	@include flex(column, 1 1 auto);
 	@include default-text;
+	@include align-all(center);
 	color: var(--accent);
 }
 

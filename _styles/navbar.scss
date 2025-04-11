@@ -1,57 +1,91 @@
 nav
 {
 	transition: none;
-	height: 50px;
-}
+	height: var(--header-height);
 
-nav::-webkit-scrollbar,
-nav ol::-webkit-scrollbar
-{
-	display: none;
-}
+	&,
+	ol
+	{
+		@include flex(row, 1 1 auto);
+		box-sizing: border-box;
+		font-size: large;
+		padding-inline-start: 0px;
+		margin-block-start: 0px;
+		margin-block-end: 0px;
+		overflow-y: auto;
+		justify-content: space-evenly;
+	}
 
-nav ol,
-nav
-{
-	@include flex(row, 1 1 auto);
-	box-sizing: border-box;
-	font-size: large;
-	padding-inline-start: 0px;
-	margin-block-start: 0px;
-    margin-block-end: 0px;
-	overflow-y: auto;
-	justify-content: space-evenly;
-}
+	&::-webkit-scrollbar,
+	ol::-webkit-scrollbar
+	{
+		display: none;
+	}
 
-nav .nav-item
-{
-	@include flex(column, grow);
-	@include smooth-border;
-	flex-basis: 100%;
-	box-sizing: border-box;
-	padding: 0 1.5em;
-	position: relative;
-	text-align: center;
-	justify-content: center;
-	border-style: solid;
-	border-width: 0px 2px 0px 2px;
-	border-color: transparent;
-	transition: 
-		border-color var(--standard-transition-timing), 
-		filter var(--standard-transition-timing);
-}
+	.nav-item
+	{
+		@include flex(column, 1 1 auto);
+		flex-basis: 100%;
+		box-sizing: border-box;
+		margin: auto;
+		position: relative;
+		text-align: center;
+		justify-content: center;
+		transition: 
+			border-color var(--standard-transition-timing), 
+			filter var(--standard-transition-timing);
+	}
 
-nav li
-{
-	@include align(center, stretch, center);
-	list-style-type: none;
-	flex-basis: 100%;
-	justify-content: center;
-}
+	li
+	{
+		@include flex(row, 1 1 100%);
+		@include align(space-around, center, center);
+		@include smooth-border;
+		border-style: solid;
+		border-width: 0px 2px 0px 2px;
+		border-color: transparent;
+		list-style-type: none;
+		padding: 0 0.4em;
+		justify-content: center;
 
-nav li:active
-{
-	@include active-press;
+		&:active
+		{
+			@include active-press;
+		}
+
+		&:hover
+		{
+			@include highlight-glow;
+		}
+	}
+
+	@media only screen and (max-width: 768px)
+	{
+		margin: 0px;
+		display: flex;
+		position: fixed;
+		top: var(--header-height);
+		right: 0;
+		left: 0;
+		height: 0;
+		pointer-events: none;
+		transition: all var(--standard-transition-timing);
+		background-color: var(--bg-secondary);
+
+		ol
+		{
+			margin: 0px;
+			flex-direction: column;
+			flex-grow: 1;
+		}
+
+		.nav-item
+		{
+			padding-top: 2em;
+			padding-bottom: 2em;
+			border-width: 2px 0px 2px 0spx;
+		}
+	}
 }
 
 a:active
@@ -59,45 +93,12 @@ a:active
 	@include active-press;
 }
 
-nav .nav-item:hover
-{
-	@include highlight-glow;
-}
-
 @media only screen and (max-width: 768px)
 {
-	nav
-	{
-		margin: 0px;
-		display: flex;
-		position: fixed;
-		top: var(--header-size);
-		right: 0;
-		left: 0;
-		height: 0;
-		pointer-events: none;
-		transition: all var(--standard-transition-timing);
-		background-color: var(--bg-secondary);
-	}
-
-	nav ol
-	{
-		margin: 0px;
-		flex-direction: column;
-		flex-grow: 1;
-	}
-
-	nav .nav-item
-	{
-		padding-top: 2em;
-		padding-bottom: 2em;
-		border-width: 2px 0px 2px 0spx;
-	}
-
 	:has(.nav-toggle .nav-toggle-activator:focus-within) nav,
 	nav:focus-within
 	{
 		pointer-events: all;
-		height: calc(100% - var(--header-size));
+		height: calc(100% - var(--header-height));
 	}
 }

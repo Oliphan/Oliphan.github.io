@@ -4,32 +4,109 @@ title: Liam Robinson - Web Portfolio
 permalink: /
 ---
 
-<section id="welcome" class="section-with-chin">
-	<h1> Welcome </h1>
-	<div class="foreground-panel small-v-padding med-h-padding">
+{% capture welcome %}
+	<section class="foreground-panel small-v-padding med-h-padding">
 		<p>
 			I'm Liam Robinson, a developer with a decade of experience working with a variety of different languages, frameworks, and technologies.
 		</p>
-	</div>
-</section>
 
-<section id="professional-work">
-	<h1> Professional Work </h1>
+		<p>
+			This is my web portfolio, containing the following:
+		</p>
+	</section>
+
+	<section>
+		<h2>Professional Work</h2>
+		<div class="foreground-panel small-v-padding med-h-padding col">
+			<p>
+				These are projects I have worked on in my time working professionally as a Unity Developer at West Pier Studio.
+			</p>
+		</div>
+
+		<section class="foreground-panel no-padding top-m1 project-description">
+			<h3 class="small-padding"><a href='#SST-OLS'>SST - OLS Apps</a></h3>
+			<div class="small-padding col">
+				<p>
+					Produced for Simpson Strong-Tie, the Outdoor Living Solutions family of applications provide tools for deck, pergola and fence planning.
+				</p>
+			</div>
+		</section>
+
+		<section class="foreground-panel no-padding top-m1 project-description">
+			<h3 class="small-v-padding"><a href='#DPS'>Data Pack System</a></h3>
+			<div class="small-padding col">
+				<p>
+					Created while I was working at SoundChalk for use in internal projects; Data Pack System is a high-performance, header-only C++ serialization library.
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<section>
+		<h2>Personal Projects</h2>
+		<div class="foreground-panel small-v-padding med-h-padding col">
+			<p>
+				These are projects I have worked on in my own spare time, or as part of my coursework while studying my Games Progamming BSc and MSc at Goldsmiths.
+			</p>
+		</div>
+
+		<section class="foreground-panel no-padding top-m1 project-description">
+			<h3 class="small-padding"><a href='#Sacrifices-Must-Be-Made'>Sacrifices Must Be Made</a></h3>
+			<div class="small-padding col">
+				<p>
+					Sacrifices Must Be Made is a Unity game about fighting for survival as a cultist in an endless tournament of the damned.
+				</p>
+			</div>
+		</section>
+
+		<section class="foreground-panel no-padding top-m1 project-description">
+			<h3 class="small-padding"><a href='#Shader-Experiments'>Shader Experiments</a></h3>
+			<div class="small-padding col">
+				<p>
+					Shader Experiments is a Unity project I used to play around with writing water shaders in Unity.
+				</p>
+			</div>
+		</section>
+
+		<section class="foreground-panel no-padding top-m1 project-description">
+			<h3 class="small-padding"><a href='#Go-Fetchie'>Go Fetchie!</a></h3>
+			<div class="small-padding col">
+				<p>
+					Go Fetchie! is a game about solving puzzles with the help of a robot dog. Built in Unreal Engine 4 with C++ and Blueprints.
+				</p>
+			</div>
+		</section>
+	</section>
+	
+{% endcapture %}
+{% include subpage.html
+	content=welcome
+	title="Welcome"
+	id="welcome" %}
+
+
+{% capture professionalWork %}
 	<div class="foreground-panel small-v-padding med-h-padding">
 		<p>Within this section are projects I have worked on professionally during my time at West Pier Studio.</p>
 	</div>
+{% endcapture %}
+{% include subpage.html
+	content=professionalWork
+	title="Professional Work"
+	id="professional-work" %}
 
-</section>
-
-<section id="personal-projects">
-	<h1> Personal Projects </h1>
+{% capture personalProjects %}
 	<div class="foreground-panel small-v-padding med-h-padding">
 		<p>Within this section are projects I have worked on as personal projects or as part of university coursework.</p>
 	</div>
-</section>
+{% endcapture %}
+{% include subpage.html
+	content=personalProjects
+	title="Personal Projects"
+	id="personal-projects" %}
 
-<section id="contact" class="section-with-chin">
-	<h1> Contact Me </h1>
+
+{% capture contactMe %}
 	<div class="foreground-panel small-v-padding med-h-padding">
 		<p>If you would like to contact me you can do so in the following ways:</p>
 	</div>
@@ -48,4 +125,8 @@ permalink: /
 			label="LinkedIn"
 		%}
 	</div>
-</section>
+{% endcapture %}
+{% include subpage.html
+	content=contactMe
+	title="Contact Me"
+	id="contact" %}

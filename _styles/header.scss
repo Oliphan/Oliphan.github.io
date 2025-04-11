@@ -8,7 +8,7 @@ header
   	top: 0;
 	right:0;
 	left: 0;
-	height: var(--header-size);
+	height: var(--header-height);
 	background-color: var(--bg-secondary);
 	box-shadow: 0 0 1em 0 var(--drop-shadow-color);
 	color: var(--accent);
@@ -22,6 +22,7 @@ header a
 	letter-spacing: var(--header-letter-spacing);
 	color: var(--accent);
 	text-decoration: none;
+	align-content: center;
 }
 
 .header-title
@@ -31,7 +32,7 @@ header a
 	@include align-all(center);
 	padding: 0 30px;
 	font-size: x-large;
-	height: var(--header-size);
+	height: var(--header-height);
 	text-wrap: nowrap;
 }
 
@@ -46,7 +47,7 @@ header a
 	@include align-all(center);
 	margin: auto;
 	width: 1000px;
-	max-height: 50px;
+	max-height: var(--header-height);
 	border-color: var(--highlight);
 	border-style: outset;
 	border-width: 0px 0px 2px 0px;

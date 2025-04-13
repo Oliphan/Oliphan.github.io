@@ -10,8 +10,9 @@
 	border-radius: 0.5em;
 	flex-grow: 0;
 	margin: auto 2em auto auto;
-	max-width: 38px;
-	max-height: 38px;
+	max-width: 48px;
+	max-height: 48px;
+	height: 48px;
 	display: none;
 	background-color: var(--bg-primary);
 	transition: var(--standard-transition-timing);
@@ -63,11 +64,11 @@
 
 .nav-toggle span
 {
-	@include flex(row, grow);
-	margin: 0.25em;
+	@include flex(row, 0 0 auto);
+	margin: 5px;
 	background-color: var(--accent);
 	transition: var(--standard-transition-timing);
-	height: 2px;
+	height: 3px;
 }
 
 .nav-toggle:hover span

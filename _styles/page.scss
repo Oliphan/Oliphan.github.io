@@ -66,6 +66,20 @@ head *
 	padding-bottom: 50px;
 }
 
+img
+{
+	max-height: 300px;
+	margin: auto;
+	border-radius: var(--standard-border-radius);
+	object-fit: contain;
+  	width: 100%;
+}
+
+iframe
+{
+	height: 450px;
+}
+
 section
 {
 	@include flex(column, 1 1 auto);

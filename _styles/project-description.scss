@@ -30,6 +30,11 @@
 		padding: 0.5em;
 	}
 
+	.description
+	{
+		@include flex(column, 1 1 100%);
+	}
+
 	@media only screen and (max-width: 800px) {
 		min-width: max(568px, 90vw);
 	}

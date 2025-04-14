@@ -18,12 +18,17 @@ body
 	background-color: var(--bg-primary); // Fallback
 	background: radial-gradient(var(--bg-primary-gradient) 50%, var(--bg-primary) 100%);
 	
-	// Only smooth scroll main on page body hover to fix firefox smooth scroll snap bugginess
-	// when adjusting window dimensions.
-	&:hover main
+	// Helper for smooth scroll only on page body hover to fix firefox smooth 
+	// scroll snap bugginess when adjusting window dimensions.
+	&:hover .smooth-scroll-fixed
 	{
 		scroll-behavior: smooth;
 	}
+}
+
+.smooth-scroll-fixed
+{
+	scroll-behavior: auto;
 }
 
 main

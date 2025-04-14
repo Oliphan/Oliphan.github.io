@@ -1,6 +1,6 @@
 <section class="subpage page-content-scroll" id={{ include.id }}>
 	<div class="page-content">
 		<h1> {{ include.title }} </h1>
-		{{ include.content }}
+		{% include {{ include.page }} %}
 	</div>
 </section>

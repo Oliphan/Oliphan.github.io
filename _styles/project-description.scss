@@ -13,15 +13,20 @@
 		border-width: 0 0 2px 0;
 		border-color: var(--highlight);
 		position: relative;
+		height: min(370px, 100%);
+		min-height: min(370px, 100%);
+		max-height: min(370px, 100%);
 
 		& > img
 		{
+			height: min(370px, 100%);
 			max-height: 370px;
 			max-width: 100%;
 			width: 100%;
 			display: flex;
 			margin: auto auto 0 auto;
 			border-radius: var(--standard-border-radius) var(--standard-border-radius) 0 0;
+			object-fit: cover;
 		}
 	}
 

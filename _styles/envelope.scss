@@ -1,7 +1,8 @@
 .envelope-holder
 {
-	@include flex(column, grow);
+	@include flex(column, 1 1 auto);
 	perspective: 100px;
+	align-items: normal;
 }
 
 .envelope-holder:active *
@@ -11,7 +12,7 @@
 
 .envelope
 {
-	@include flex(column, grow);
+	@include flex(column, 1 1 auto);
 	@include foregroundPanel;
 	perspective: 100px;
 	z-index: 1;
@@ -23,14 +24,15 @@
 
 .envelope-holder:hover .envelope
 {
-	@include highlight-glow;
 	transform: translateY(50px) translateZ(-50px);
 }
 
 .envelope-contents
 {
-	@include flex;
-	@include smooth-border;
+	@include flex(row, 1 1 auto);
+	@include foregroundPanel;
+	border-color: var(--accent);
+	border-style: solid;
 	perspective: 100px;
 	position: absolute;
 	padding: 0.5em;
@@ -45,17 +47,20 @@
 	text-align : center;
 	text-decoration: none;
 	pointer-events: none;
-	background-color: var(--bg-primary);
 	overflow-wrap: anywhere;
 }
 
 .envelope-holder:hover .envelope-contents
 {
-	@include highlight-glow;
 	animation-duration: calc(var(--standard-transition-timing) * 3);
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
 	animation-name: open-envelope-contents;
+}
+
+.envelope-contents-body
+{
+	@include highlight-glow;
 }
 
 @keyframes open-envelope-contents
@@ -85,14 +90,14 @@
 .envelope-label
 {
 	@include default-text;
-	@include flex;
+	@include flex(column, 1 1 auto);
 	position: absolute;
 	top:  0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	align-items: flex-end;
-	justify-content: center;
+	align-items: center;
+	justify-content: end;
 	margin-bottom: 10px;
 	font-weight: 600;
 }
@@ -103,9 +108,9 @@
 	position: absolute;
 	background-color: var(--bg-secondary);
 	top: 3px;
-	bottom: 51%;
-	right: 10px;
-	left: 10px;
+	bottom: 52%;
+	right: 4%;
+	left: 4%;
 	clip-path: polygon(0 0, 50% 100%, 100% 0);
 	transform-origin: top center;
 }
@@ -140,7 +145,7 @@
 .envelope-fold-right,
 .envelope-fold-left
 {
-	--line-color: black;
+	--line-color: var(--highlight);
 	@include smooth-border;
 	background-color: var(--bg-secondary);
 	position: absolute;
@@ -154,8 +159,8 @@
 {
 	background: linear-gradient(
 		to top left,
-		var(--bg-secondary) calc(51% - .25em),
-		var(--line-color) calc(51% - .25em),
+		var(--bg-secondary) calc(51% - 2px),
+		var(--line-color) calc(51% - 2px),
 		var(--line-color) 51%,
 		transparent 51%);
 }
@@ -164,8 +169,8 @@
 {
 	background: linear-gradient(
 		to top right,
-		var(--bg-secondary) calc(51% - .25em),
-		var(--line-color) calc(51% - .25em),
+		var(--bg-secondary) calc(51% - 2px),
+		var(--line-color) calc(51% - 2px),
 		var(--line-color) 51%,
 		transparent 51%);
 }

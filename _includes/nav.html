@@ -1,13 +1,48 @@
-<nav>
-	<ol>
+<nav tabindex="-1">
+	<ol class="primary-nav">
 		<li>
-			<a tabindex="1" href="/#welcome" onclick="this.blur();"> Home </a>
+			<a class="nav-item" tabindex="0" href="/#welcome" onclick="this.blur();"> Welcome </a>
+		</li>
+		<li class="collapse">
+			<div tabindex="-1" class="nav-item">
+				<div class="caret" tabindex="0"></div>
+				<a tabindex="0" > Professional Work </a>
+			</div>
+			
+			<ol class="collapse-content col">
+				<li>
+					<a class="nav-item" tabindex="0" href="/#SST-OLS" onclick="this.blur();"> SST - OLS Apps </a>
+				</li>
+				<li>
+					<a class="nav-item" tabindex="0" href="/#DPS" onclick="this.blur();"> Data Pack System </a>
+				</li>
+			</ol>
+		</li>
+		<li class="collapse">
+			<div tabindex="-1" class="nav-item">
+				<div class="caret" tabindex="0"></div>
+				<a tabindex="0"> Personal Projects </a>
+			</div>
+			<ol class="collapse-content col">
+				<li>
+					<a class="nav-item" tabindex="0" href="/#sacrifices-must-be-made" onclick="this.blur();"> Sacrifices Must Be Made </a>
+				</li>
+				<li>
+					<a class="nav-item" tabindex="0" href="/#shader-experiments" onclick="this.blur();"> Shader Experiments </a>
+				</li>
+				<li>
+					<a class="nav-item" tabindex="0" href="/#go-fetchie" onclick="this.blur();"> Go Fetchie! </a>
+				</li>
+				<li>
+					<a class="nav-item" tabindex="0" href="/#games-dev-examples" onclick="this.blur();"> Games Dev Examples </a>
+				</li>
+				<li>
+					<a class="nav-item" tabindex="0" href="/#3d-assets" onclick="this.blur();"> 3D Assets </a>
+				</li>
+			</ol>
 		</li>
 		<li>
-			<a tabindex="2" href="/#projects" onclick="this.blur();"> My Projects </a>
-		</li>
-		<li>
-			<a tabindex="3" href="/#contact" onclick="this.blur();"> Contact Me </a>
+			<a class="nav-item" tabindex="0" href="/#contact" onclick="this.blur();"> Contact Me </a>
 		</li>
 	</ol>
 </nav>

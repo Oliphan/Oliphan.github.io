@@ -1,0 +1,49 @@
+.project-description
+{
+	scroll-snap-align: center;
+	min-width: min(800px, 90vw);
+	border-width: 0 2px;
+  	border-style: outset;
+  	border-color: var(--highlight);
+
+	& > .image-container
+	{
+		@include flex(column, 1 1 100%);
+		border-style: ridge;
+		border-width: 0 0 2px 0;
+		border-color: var(--highlight);
+		position: relative;
+
+		& > img
+		{
+			max-height: 370px;
+			max-width: 100%;
+			width: 100%;
+			display: flex;
+			margin: auto auto 0 auto;
+			border-radius: var(--standard-border-radius) var(--standard-border-radius) 0 0;
+		}
+	}
+
+	h3
+	{
+		margin: 0 auto;
+		padding: 0.5em;
+	}
+
+	.description
+	{
+		@include flex(column, 1 1 100%);
+	}
+
+	@media only screen and (max-width: 800px) {
+		min-width: max(568px, 90vw);
+	}
+
+	@media only screen and (max-width: 568px)
+	{
+		min-width: 100vw;
+		grid-template-columns: 100%;
+		grid-template-rows: 1.5em auto;
+	}
+}

@@ -4,82 +4,47 @@ title: Liam Robinson - Web Portfolio
 permalink: /
 ---
 
-<section id="#welcome">
-	<h1> Welcome </h1>
-	<div class="foreground-panel small-v-padding med-h-padding">
-		<p>
-			I'm Liam Robinson, a developer with a decade of experience working with a variety of different languages, frameworks, and technologies.
-		</p>
-	</div>
-</section>
+{% include subpage.html
+	page="sub-pages/welcome.html"
+	title="Welcome"
+	id="welcome" %}
 
-<section id="#contact">
-	<h1> Contact Me </h1>
-	<div class="foreground-panel small-v-padding med-h-padding">
-		<p>If you would like to contact me you can do so in the following ways:</p>
-	</div>
-	<div class="responsive-row-col">
-		{% include
-			envelope.html
-			link="mailto:liam.robinson.lmr@gmail.com"
-			contents="liam<wbr>.robinson<wbr>.lmr<wbr>@gmail<wbr>.com"
-			label="Email"
-		%}
-		<div class="responsive-spacer-tiny"></div>
-		{% include
-			envelope.html
-			link="https://www.linkedin.com/in/liam-robinson-457226122"
-			contents="Liam <wbr>Robinson"
-			label="LinkedIn"
-		%}
-	</div>
-</section>
+{% include subpage.html
+	page="sub-pages/sst-ols.html"
+	title="Simpson Strong-Tie - Outdoor Living Solutions"
+	id="SST-OLS" %}
 
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
-<section>
-	<h1> Lorem </h1>
-	<div class="foreground-panel">
-		<p>Ipsum</p>
-	</div>
-</section>
+{% include subpage.html
+	page="sub-pages/dps.html"
+	title="Data Pack System (DPS) – A C++17 Serialization Library"
+	id="DPS" %}
+
+{% include subpage.html
+	page="sub-pages/sacrifices-must-be-made.html"
+	title="Sacrifices Must Be Made"
+	id="sacrifices-must-be-made" %}
+
+{% include subpage.html
+	page="sub-pages/shader-experiments.html"
+	title="Shader Experiments"
+	id="shader-experiments" %}
+
+{% include subpage.html
+	page="sub-pages/go-fetchie.html"
+	title="Go Fetchie!"
+	id="go-fetchie" %}
+
+{% include subpage.html
+	page="sub-pages/games-dev-examples.html"
+	title="Games Dev Examples"
+	id="games-dev-examples" %}
+
+{% include subpage.html
+	page="sub-pages/3d-assets.html"
+	title="3D Assets"
+	id="3d-assets" %}
+
+{% include subpage.html
+	page="sub-pages/contact-me.html"
+	title="Contact Me"
+	id="contact" %}

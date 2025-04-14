@@ -1,6 +1,14 @@
-html, body
+html
 {
-	@include flex(column);
+	@include flex(column, 1 1 auto);
+	margin: 0px;
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--header-height); // Offset to account for header
+}
+
+body
+{
+	@include flex(column, 1 1 auto);
 	margin: 0px;
 	height: 100%;
 }
@@ -9,17 +17,38 @@ body
 {
 	background-color: var(--bg-primary); // Fallback
 	background: radial-gradient(var(--bg-primary-gradient) 50%, var(--bg-primary) 100%);
+	
+	// Helper for smooth scroll only on page body hover to fix firefox smooth 
+	// scroll snap bugginess when adjusting window dimensions.
+	&:hover .smooth-scroll-fixed
+	{
+		scroll-behavior: smooth;
+	}
+}
+
+.smooth-scroll-fixed
+{
+	scroll-behavior: auto;
 }
 
 main
 {
-	@include flex(column);
-	margin: 0px;
-	top: var(--header-size);
-	height: calc(100% - var(--header-size));
+	@include flex(row, 1 1 auto);
+	max-height: var(--body-height);
+	min-height: var(--body-height);
 	position: relative;
-	overflow: hidden;
 	color: var(--text-main);
+	scroll-behavior: auto;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	scroll-snap-type: x mandatory;
+	scroll-snap-stop: always;
+
+	&::-webkit-scrollbar
+	{
+		display: none;
+	}
 }
 
 head *
@@ -27,35 +56,55 @@ head *
 	display: none;
 }
 
-.page-content-scroll
-{
-	overflow-y: auto;
-	overflow-x: hidden;
-	height: 100%;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	display: block;
-}
-
-.page-content-scroll::-webkit-scrollbar
-{
-	display: none;
-}
-
 .page-content
 {
+	@include flex(column, 1 1 auto);
 	width: min(800px, 90%);
 	margin-left: auto;
 	margin-right: auto;
 	transition: all var(--standard-transition-timing);
+	padding-bottom: 50px;
+}
+
+img
+{
+	max-height: 300px;
+	margin: auto;
+	border-radius: var(--standard-border-radius);
+	object-fit: contain;
+  	width: 100%;
+}
+
+iframe
+{
+	height: 450px;
 }
 
 section
 {
-	@include flex(column);
+	@include flex(column, 1 1 auto);
 	box-sizing: border-box;
-	margin: 2em auto 4em auto;
+	padding: 2em 0 0 0;
 	width: 100%;
+
+	&.subpage
+	{
+		overflow-y: auto;
+		overflow-x: hidden;
+		height: 100%;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+		display: block;
+		scroll-behavior: smooth;
+		width: 100vw;
+		min-width: 100vw;
+		scroll-snap-align: center;
+
+		&::-webkit-scrollbar
+		{
+			display: none;
+		}
+	}
 }
 
 @mixin foregroundPanel
@@ -63,16 +112,14 @@ section
 	@include smooth-border;
 	background-color: var(--bg-secondary);
 	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
+	border-color: var(--highlight);
+	border-style: outset;
+	border-width: 2px;
 }
 
 .foreground-panel
 {
 	@include foregroundPanel;
-}
-
-footer
-{
-	margin-top: 2em;
 }
 
 @media only screen and (max-width: 800px)

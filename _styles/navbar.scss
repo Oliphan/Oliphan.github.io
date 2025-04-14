@@ -1,55 +1,125 @@
 nav
 {
 	transition: none;
-}
+	height: var(--header-height);
 
-nav::-webkit-scrollbar,
-nav ol::-webkit-scrollbar
-{
-	display: none;
-}
+	a
+	{
+		@include align-all(center);
+	}
 
-nav ol,
-nav
-{
-	@include flex(row);
-	box-sizing: border-box;
-	font-size: large;
-	padding-inline-start: 0px;
-	margin-block-start: 0px;
-    margin-block-end: 0px;
-	margin-left: 1em;
-	overflow-y: auto;
-	justify-content: space-evenly;
-}
+	&,
+	ol
+	{
+		@include flex(row, 1 1 auto);
+		box-sizing: border-box;
+		font-size: large;
+		padding-inline-start: 0px;
+		margin-block-start: 0px;
+		margin-block-end: 0px;
+		justify-content: space-evenly;
+	}
 
-nav a
-{
-	@include flex(column, grow);
-	@include smooth-border;
-	box-sizing: border-box;
-	width: 100%;
-	padding: 0 1.5em;
-	position: relative;
-	text-align: center;
-	justify-content: center;
-	border-style: solid;
-	border-width: 1px;
-	border-color: transparent;
-	transition: 
-		border-color var(--standard-transition-timing), 
-		filter var(--standard-transition-timing);
-}
+	& > ol.primary-nav
+	{
+		position: static;
+		top: 0;
+	}
 
-nav li
-{
-	@include flex(column, grow);
-	list-style-type: none;
-}
+	ol
+	{
+		position: absolute;
+		top: var(--header-height);
+	}
 
-nav li:active
-{
-	@include active-press;
+	&::-webkit-scrollbar,
+	ol::-webkit-scrollbar
+	{
+		display: none;
+	}
+
+	.nav-item
+	{
+		@include flex(row, 0 1 100%);
+		@include smooth-border;
+		padding: 0 0.4em;
+		box-sizing: border-box;
+		position: relative;
+		text-align: center;
+		justify-content: center;
+		transition: 
+			border-color var(--standard-transition-timing), 
+			filter var(--standard-transition-timing);
+		cursor: pointer;
+		border-style: solid;
+		border-width: 0px 2px 0px 2px;
+		border-color: transparent;
+		min-height: var(--header-height);
+
+		&:hover
+		{
+			@include highlight-glow;
+		}
+
+		a
+		{
+			flex: 0 1 auto;
+		}
+	}
+
+	li
+	{
+		@include flex(row, 1 1 100%);
+		@include align(space-around, stretch, center);
+		@include align-text(justify, center);
+		@include smooth-border;
+		height: fit-content;
+		list-style-type: none;
+		justify-content: center;
+		position: relative;
+		background-color: var(--bg-secondary);
+		margin: 0;
+
+		&:active
+		{
+			@include active-press;
+		}
+	}
+
+	@media only screen and (max-width: 768px)
+	{
+		margin: 0px;
+		display: flex;
+		position: fixed;
+		top: var(--header-height);
+		right: 0;
+		left: 0;
+		height: 0;
+		pointer-events: none;
+		transition: all var(--standard-transition-timing);
+		background-color: var(--bg-secondary);
+		overflow-y: auto;
+
+		.nav-item
+		{
+			@include flex(row, 0 1 auto);
+		}
+
+		li
+		{
+			flex: 0 1 auto;
+			flex-direction: column;
+		}
+
+		ol
+		{
+			margin: 0px;
+			flex-direction: column;
+			flex-grow: 1;
+			justify-content: start;
+			position: static;
+		}
+	}
 }
 
 a:active
@@ -57,45 +127,12 @@ a:active
 	@include active-press;
 }
 
-nav a:hover
-{
-	@include highlight-glow;
-	border-color: var(--accent);
-}
-
 @media only screen and (max-width: 768px)
 {
-	nav
-	{
-		margin: 0px;
-		display: flex;
-		position: fixed;
-		top: var(--header-size);
-		right: 0;
-		left: 0;
-		height: 0;
-		pointer-events: none;
-		transition: all var(--standard-transition-timing);
-		background-color: var(--bg-secondary);
-	}
-
-	nav ol
-	{
-		margin: 0px;
-		flex-direction: column;
-		flex-grow: 1;
-	}
-
-	nav a
-	{
-		padding-top: 2em;
-		padding-bottom: 2em;
-	}
-
 	:has(.nav-toggle .nav-toggle-activator:focus-within) nav,
 	nav:focus-within
 	{
 		pointer-events: all;
-		height: calc(100% - var(--header-size));
+		height: calc(100% - var(--header-height));
 	}
 }

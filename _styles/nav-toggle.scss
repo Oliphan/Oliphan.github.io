@@ -3,15 +3,16 @@
 	box-sizing: border-box;
 	position: relative;
 	display: none;
-	border-style: solid;
-	border-width: 1px;
-	border-color: transparent var(--accent) var(--accent) var(--accent);
-	padding: 0.2em;
+	border-style: outset;
+	border-width: 2px;
+	border-color: var(--highlight);
+	padding: 2px;
 	border-radius: 0.5em;
 	flex-grow: 0;
 	margin: auto 2em auto auto;
-	min-width: 2.5em;
-	height: 2.5em;
+	max-width: 48px;
+	max-height: 48px;
+	height: 48px;
 	display: none;
 	background-color: var(--bg-primary);
 	transition: var(--standard-transition-timing);
@@ -63,10 +64,11 @@
 
 .nav-toggle span
 {
-	@include flex(row, grow);
-	margin: 0.25em;
+	@include flex(row, 0 0 auto);
+	margin: 5px;
 	background-color: var(--accent);
 	transition: var(--standard-transition-timing);
+	height: 3px;
 }
 
 .nav-toggle:hover span
@@ -78,6 +80,6 @@
 {
 	.nav-toggle
 	{
-		@include flex(column);
+		@include flex(column, 1 1 auto);
 	}
 }

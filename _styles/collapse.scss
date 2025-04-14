@@ -1,0 +1,57 @@
+.collapse
+{
+	& > * > .caret
+	{
+		width: 0px;
+		height: 0px;
+		margin-right: 5px;
+		border-width: .5em;
+		border-color: var(--accent) transparent transparent transparent;
+		border-style: outset;
+		align-self: center;
+		transform: rotate(0deg) translateY(0.25em);
+		transition-duration: 0.3s;
+		transition-property: transform;
+	}
+	
+	& > .collapse-content
+	{
+		display: flex;
+		height: 0;
+		width: 100%;
+		transition: all var(--standard-transition-timing);
+		opacity: 0;
+		pointer-events: none;
+
+		& > li
+		{
+			height: 0;
+			transition: all var(--standard-transition-timing);
+		}
+
+		@media only screen and (max-width: 768px)
+		{
+			width: auto;
+		}
+	}
+
+	&:focus-within
+	{
+		& > .collapse-content
+		{
+			height: 100%;
+			opacity: 1;
+			pointer-events: all;
+
+			& > li
+			{
+				height: 100%;
+			}
+		}
+
+		& > * > .caret
+		{
+			transform: rotate(180deg) translateY(0.25em);
+		}
+	}
+}

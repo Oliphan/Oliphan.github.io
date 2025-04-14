@@ -1,0 +1,39 @@
+<iframe src="https://drive.google.com/file/d/1NtpEiKnnCs8txCbMEe4wIZRChdzbRt3s/preview" class="foreground-panel"></iframe>
+
+<div class="foreground-panel small-v-padding med-h-padding">
+	<p>
+		Shader Experiments is the result of me playing around with writing my own water shaders in Unity. The shader has the following features that are customizable by via a UI in the application:
+	</p>
+	<ul>
+		<li>
+			Procedurally generated Gerstner Waves courtesy of <a href="https://catlikecoding.com/unity/tutorials/flow/waves/">Catlike Coding</a>
+		</li>
+		<li>
+			"Shallow" tinting and "Deep" fog using the depth buffer
+		</li>
+		<li>
+			Planar reflections that are achieved using a copy of the main camera flipped across the reflection axis with a custom clipping plane, and then screen-space mapping the render onto the water’s surface with screen space normal distortions
+		</li>
+		<li>Underwater refraction using a grab pass and screen space normals to shift the screen space UVs</li>
+		<li>Caustics using light space texture mapping and world normals grabbed from the depth buffer. Inspired by&#32;<a href="https://www.alanzucconi.com/2019/09/13/believable-caustics-reflections/">Alan Zucconi</a>&#32;and&#32;<a href="https://x.com/flogelz/status/1165251296720576512">Flogelz</a></li>
+		<li>Specular shine using combined surface and texture normals</li>
+	</ul>
+</div>
+
+<section>
+	<h2>Have a Poke Around With the Settings</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			Grab the latest build &#32;<a href="https://gitlab.doc.gold.ac.uk/lrobi007/shader-experiments/-/releases">here</a>.
+		</p>
+	</div>
+</section>
+
+<section>
+	<h2>See The Source Code</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			Take a look at the source code &#32;<a href="https://gitlab.doc.gold.ac.uk/lrobi007/shader-experiments">here</a>.
+		</p>
+	</div>
+</section>

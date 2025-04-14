@@ -1,29 +1,120 @@
-@mixin flex($direction: null, $shrinkGrow: null)
+@mixin flex($direction, $growShrinkBasis)
 {
 	display: flex;
 	@if ($direction)
 	{
 		flex-direction: #{$direction};
 	}
-	@if ($shrinkGrow)
+	@if ($growShrinkBasis)
 	{
-		flex-#{$shrinkGrow}: 1;
+		flex: #{$growShrinkBasis};
+	}
+}
+
+@mixin align($content: center, $items: center, $text: center)
+{
+	display: flex;
+	@if ($items)
+	{
+		align-items: #{$items};
+	}
+	@if ($content)
+	{
+		align-content: #{$content};
+	}
+	@if ($text)
+	{
+		text-align: #{$text};
+	}
+}
+
+@mixin justify($content: center, $items: center, $text: center)
+{
+	display: flex;
+	@if ($content)
+	{
+		align-content: #{$content};
+	}
+	@if ($items)
+	{
+		align-items: #{$items};
+	}
+	@if ($text)
+	{
+		text-align: #{$text};
+	}
+}
+
+@mixin position($type, $top: null, $right: null, $bottom: null, $left: null)
+{
+	@if($type)
+	{
+		position: #{$type};
+	}
+
+	@if ($top)
+	{
+		top: #{$top};
+	}
+
+	@if ($right)
+	{
+		right: #{$right};
+	}
+
+	@if ($bottom)
+	{
+		bottom: #{$bottom};
+	}
+	@else if ($top)
+	{
+		bottom: #{$top};
+	}
+
+	@if ($left)
+	{
+		left: #{$left};
+	}
+	@else if ($right)
+	{
+		left: #{$right};
 	}
 }
 
 .row
 {
-	@include flex(row);
+	display: flex;
+	flex-direction: row;
 }
 
 .col
 {
-	@include flex(column);
+	display: flex;
+	flex-direction: column;
 }
 
 .grow
 {
 	flex-grow: 1;
+}
+
+.shrink
+{
+	flex-shrink: 1;
+}
+
+.align-center
+{
+	display: flex;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+.justify-center
+{
+	display: flex;
+	justify-content: center;
 }
 
 .v-spacer-small
@@ -42,6 +133,11 @@
 {
 	padding-top: $amount;
 	padding-bottom: $amount;
+}
+
+.no-padding
+{
+	padding: 0;
 }
 
 .small-padding
@@ -64,6 +160,11 @@
 	@include pad-h(2em); 
 }
 
+.top-m1
+{
+	margin-top: 1em;
+}
+
 .no-margin
 {
 	margin: 0px;
@@ -77,47 +178,24 @@
 	align-items: #{$alignment};
 }
 
-.center-h,
-.center-v,
-.center
+@mixin align-center($types...)
 {
-	@include align-all(center);
+	@each $type in $types
+	{
+		@if $type == text
+		{
+			text-align: center;
+		}
+		@else if $type == content
+		{
+			align-content: center;
+		}
+		@else if $type == items
+		{
+			align-items: center;
+		}
+	}
 }
-
-.center
-{
-	margin: auto;
-}
-
-.center-v
-{
-	margin-top: auto;
-	margin-bottom: auto;
-}
-
-.center-h
-{
-	margin-right: auto;
-	margin-left: auto;
-}
-
-@mixin horizontal-align($side, $opposite)
-{
-	@include align-all($side);
-	margin-#{$opposite}: auto;
-	margin-#{$side}: 0;
-}
-
-.left
-{
-	@include horizontal-align(left, right);
-}
-
-.right
-{
-	@include horizontal-align(right, left);
-}
-
 
 .responsive-row-col
 {

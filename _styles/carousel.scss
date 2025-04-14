@@ -1,0 +1,37 @@
+.carousel
+{
+	@include flex(row, 1 1 auto);
+	overflow-x: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	scroll-snap-type: x mandatory;
+	scroll-snap-stop: always;
+	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
+
+	.next,
+	.previous
+	{
+		display: flex;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		font-size: 3em;
+		text-decoration: none;
+		opacity: 0.7;
+		justify-content: center;
+	}
+	
+	.next
+	{
+		align-items: end;
+		right: 0;
+		left: 50%;
+	}
+
+	.previous
+	{
+		align-items: start;
+		right: 50%;
+		left: 0;
+	}
+}

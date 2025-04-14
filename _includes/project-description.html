@@ -1,0 +1,23 @@
+{% if include.fit And include.fit != "" And include.fit != nil %}
+	{% assign fit = 'object-fit: ' | append: include.fit | append: ';'  %}
+{% else %}
+	{% assign fit = 'object-fit: cover;'  %}
+{% endif %}
+
+<section class="no-padding project-description" id={{ include.id }}>
+	<div class="image-container">
+		{% if include.previous != nil %}
+			<a class="previous" href={{ include.previous }}>&#129032;</a>
+		{% endif %}
+		{% if include.next != nil %}
+			<a class="next" href={{ include.next }}>&#129034;</a>
+		{% endif %}
+		<img src={{ include.image }} alt={{ include.imageAlt }} style="{{ fit }}" />
+	</div>
+	<h3 class="small-padding"><a href={{ include.href }}>{{ include.title }}</a></h3>
+	<div class="description small-padding col">
+		<p>
+			{{ include.description }}
+		</p>
+	</div>
+</section>

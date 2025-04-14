@@ -26,6 +26,23 @@ p
 	@include align-text(justify, center);
 	@include default-text;
 	margin: auto;
+
+	& > a
+	{
+		display: inline;
+	}
+}
+
+li
+{
+	@include align-text(justify, left);
+	@include default-text;
+	margin: auto;
+
+	& > a
+	{
+		display: inline;
+	}
 }
 
 h1
@@ -60,7 +77,6 @@ a
 {
 	@include flex(column, 1 1 auto);
 	@include default-text;
-	@include align-all(center);
 	color: var(--accent);
 }
 

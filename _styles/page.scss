@@ -88,18 +88,6 @@ section
 	}
 }
 
-.project-description
-{
-	display: grid;
-	grid-template-columns: 25% 75%;
-
-	@media only screen and (max-width: 568px)
-	{
-		grid-template-columns: 100%;
-		grid-template-rows: 1.5em auto;
-	}
-}
-
 @mixin foregroundPanel
 {
 	@include smooth-border;

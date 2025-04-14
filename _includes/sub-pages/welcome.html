@@ -1,0 +1,73 @@
+<div class="foreground-panel small-v-padding med-h-padding">
+	<p>
+		I'm Liam Robinson, a developer with a decade of experience working with a variety of different languages, frameworks, and technologies.
+	</p>
+	<p>
+		This is my web portfolio.
+	</p>
+</div>
+
+<section>
+	<h2>Professional Work</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			These are projects I have worked on in my time working professionally as a Unity Developer at West Pier Studio.
+		</p>
+	</div>
+
+	<div class="carousel top-m1 foreground-panel smooth-scroll-fixed">
+		{% include project-description.html
+			image="assets/deck-planner-screenshot.jpg"
+			imageAlt="\"Screenshot of the Simpson Strong-Tie Deck Planner Application\""
+			id="sst-ols-description"
+			next="#dps-description"
+			href="#SST-OLS"
+			title="SST - OLS Apps"
+			description="Produced for Simpson Strong-Tie, the Outdoor Living Solutions family of applications provide tools for deck, pergola and fence planning." %}
+	
+		{% include project-description.html
+			image="assets/dps-logo.png"
+			imageAlt="\"Data Pack System Logo\""
+			id="dps-description"
+			previous="#sst-ols-description"
+			href="#DPS"
+			title="Data Pack System"
+			description="Created while I was working at SoundChalk for use in internal projects; Data Pack System is a high-performance, header-only C++ serialization library." %}
+	</div>
+</section>
+
+<section>
+	<h2>Personal Projects</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			These are projects I have worked on in my own spare time, or as part of my coursework while studying my Games Progamming BSc and MSc at Goldsmiths.
+		</p>
+	</div>
+
+	<section class="foreground-panel no-padding top-m1 project-description">
+		<h3 class="small-padding"><a href='#Sacrifices-Must-Be-Made'>Sacrifices Must Be Made</a></h3>
+		<div class="small-padding col">
+			<p>
+				Sacrifices Must Be Made is a Unity game about fighting for survival as a cultist in an endless tournament of the damned.
+			</p>
+		</div>
+	</section>
+
+	<section class="foreground-panel no-padding top-m1 project-description">
+		<h3 class="small-padding"><a href='#Shader-Experiments'>Shader Experiments</a></h3>
+		<div class="small-padding col">
+			<p>
+				Shader Experiments is a Unity project I used to play around with writing water shaders in Unity.
+			</p>
+		</div>
+	</section>
+
+	<section class="foreground-panel no-padding top-m1 project-description">
+		<h3 class="small-padding"><a href='#Go-Fetchie'>Go Fetchie!</a></h3>
+		<div class="small-padding col">
+			<p>
+				Go Fetchie! is a game about solving puzzles with the help of a robot dog. Built in Unreal Engine 4 with C++ and Blueprints.
+			</p>
+		</div>
+	</section>
+</section>

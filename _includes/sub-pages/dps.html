@@ -1,0 +1,91 @@
+<img src="assets/dps-logo.png" alt="Data Pack System Logo" />
+
+<div class="foreground-panel small-v-padding med-h-padding">
+	<p>
+		DPS is a header-only C++17 serialization library with no external dependencies. It is designed to:
+	</p>
+	<ul>
+		<li>
+			Be fast (really fast)
+		</li>
+		<li>
+			Be non-invasive
+		</li>
+		<li>
+			Require the user to write as little code as possible
+		</li>
+		<li>
+			Provide full control of how data is formatted
+		</li>
+	</ul>
+	<p>
+		Currently the library provides 3 formats:
+	</p>
+	<ul>
+		<li>
+			Binary
+		</li>
+		<li>
+			Portable Binary
+		</li>
+		<li>
+			JSON
+		</li>
+	</ul>
+	<p>
+		Portable Binary and JSON are good for saving to disk or network transfer. Binary isn’t portable between machines, but is lightning fast, making it good for quickly saving/loading states of objects in memory for quickly implementing undo/redo systems for example.
+	</p>
+</div>
+
+<section>
+	<h2>Source Code</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			Check out the source code &#32;<a href="https://gitlab.doc.gold.ac.uk/lrobi010/DataPackSystem">here</a>.
+		</p>
+	</div>
+</section>
+
+<section>
+	<h2>Getting Started</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			To get started using DataPackSystem do the following:
+		</p>
+		<ol>
+			<li>
+				Download the source code and ensure that the DataPackSystem folder is added to your compiler’s include path
+			</li>
+			<li>
+				Include the header(s) from the Formats folder for the format(s) you want to serialize your data in
+			</li>
+			<li>
+				Include the appropriate headers from the StandardLibrary folder if you want to serialize any standard library types
+			</li>
+			<li>
+				Write Translator specializations for any of your own types you want to serialize
+			</li>
+			<li>
+				Create a DataPack in your code with the format you want your data to be in and pack that data!
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section>
+	<h2>License</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			DPS uses the&#32;<a href="https://opensource.org/licenses/BSD-3-Clause">BSD license</a>.
+		</p>
+	</div>
+</section>
+
+<section>
+	<h2>Documentation</h2>
+	<div class="foreground-panel small-v-padding med-h-padding col">
+		<p>
+			For documentation, check out the examples in the&#32;<a href="https://gitlab.doc.gold.ac.uk/lrobi010/DataPackSystem/-/tree/master/Examples">Examples</a>&#32;directory. They come with comments that explain the syntax and its usage. These are currently the main form of documentation for the library.
+		</p>
+	</div>
+</section>

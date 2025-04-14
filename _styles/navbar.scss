@@ -3,6 +3,11 @@ nav
 	transition: none;
 	height: var(--header-height);
 
+	a
+	{
+		@include align-all(center);
+	}
+
 	&,
 	ol
 	{
@@ -66,12 +71,14 @@ nav
 	{
 		@include flex(row, 1 1 100%);
 		@include align(space-around, stretch, center);
+		@include align-text(justify, center);
 		@include smooth-border;
 		height: fit-content;
 		list-style-type: none;
 		justify-content: center;
 		position: relative;
 		background-color: var(--bg-secondary);
+		margin: 0;
 
 		&:active
 		{

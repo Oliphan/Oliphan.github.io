@@ -3,9 +3,14 @@ nav
 	transition: none;
 	height: var(--header-height);
 
-	a
+	a,
+	.link
 	{
 		@include align-all(center);
+		line-height: var(--header-line-height);
+		letter-spacing: var(--header-letter-spacing);
+		color: var(--accent);
+		text-decoration: none;
 	}
 
 	&,
@@ -61,7 +66,8 @@ nav
 			@include highlight-glow;
 		}
 
-		a
+		a,
+		.link
 		{
 			flex: 0 1 auto;
 		}
@@ -122,7 +128,8 @@ nav
 	}
 }
 
-a:active
+a:active,
+.link:active
 {
 	@include active-press;
 }

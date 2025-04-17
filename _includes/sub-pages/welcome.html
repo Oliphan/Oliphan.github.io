@@ -47,9 +47,19 @@
 
 	<div class="carousel top-m1 foreground-panel smooth-scroll-fixed">
 		{% include project-description.html
+			image="https://drive.google.com/thumbnail?id=1wtce9rjTK6OuP1uOyY8psx6ULJ0RyB9N&sz=w1000"
+			imageAlt="\"A screenshot of this website.\""
+			id="this-website-description"
+			next="#sacrifices-must-be-made-description"
+			href="#this-website"
+			title="This Website"
+			description="This website right here. The one you're on right now!" %}
+
+		{% include project-description.html
 			image="https://drive.google.com/thumbnail?id=1NcXafZH1S8Whvpys8UP9E__ad4ro_YyU&sz=w1000"
 			imageAlt="\"A screenshot of Sacrifices Must Be Made gameplay\""
 			id="sacrifices-must-be-made-description"
+			previous="#this-website-description"
 			next="#shader-experiments-description"
 			href="#sacrifices-must-be-made"
 			title="Sacrifices Must Be Made"

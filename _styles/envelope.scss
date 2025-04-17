@@ -65,7 +65,7 @@
 
 @keyframes open-envelope-contents
 {
-	0%, 25%
+	0%, 40%
 	{
 		transform: translateY(0px) translateZ(0px);
 		z-index: 0;
@@ -102,20 +102,34 @@
 	font-weight: 600;
 }
 
-.envelope-flap
+@mixin envelope-flap($color, $yOffset)
 {
 	z-index: 1;
 	position: absolute;
-	background-color: var(--bg-secondary);
+	background-color: #{$color};
 	top: 3px;
 	bottom: 52%;
 	right: 4%;
 	left: 4%;
-	clip-path: polygon(0 0, 50% 100%, 100% 0);
+	clip-path: polygon(
+		0 #{$yOffset},
+		50% calc(100% + #{$yOffset}),
+		100% #{$yOffset});
 	transform-origin: top center;
 }
 
-.envelope-holder:hover .envelope-flap
+.envelope-flap
+{
+	@include envelope-flap(var(--bg-secondary), 0px);
+}
+
+.envelope-flap-outline
+{
+	@include envelope-flap(var(--highlight), 2px);
+}
+
+.envelope-holder:hover .envelope-flap,
+.envelope-holder:hover .envelope-flap-outline
 {
 	animation-duration: var(--standard-transition-timing);
 	animation-fill-mode: forwards;
@@ -129,21 +143,23 @@
 	{
 		transform: scaleY(100%);
 		z-index: 1;
+		top: 3px;
 	}
 	50%
 	{
 		transform: scaleY(0%);
 		z-index: -1;
+		top: 0px;
 	}
 	100%
 	{
 		transform: scaleY(-100%);
 		z-index: -1;
+		top: 0;
 	}
 }
 
-.envelope-fold-right,
-.envelope-fold-left
+@mixin envelope-half($side, $color, $flapEnd)
 {
 	--line-color: var(--highlight);
 	@include smooth-border;
@@ -153,24 +169,29 @@
 	bottom: 0;
 	right: 0;
 	left: 0;
+	background: linear-gradient(
+		to top #{$side},
+		#{$color} #{$flapEnd},
+		#{$color} #{$flapEnd},
+		transparent #{$flapEnd});
 }
 
-.envelope-fold-right
+.envelope-left-lines
 {
-	background: linear-gradient(
-		to top left,
-		var(--bg-secondary) calc(51% - 2px),
-		var(--line-color) calc(51% - 2px),
-		var(--line-color) 51%,
-		transparent 51%);
+	@include envelope-half(left, var(--line-color), calc(51%));
 }
 
-.envelope-fold-left
+.envelope-right-lines
 {
-	background: linear-gradient(
-		to top right,
-		var(--bg-secondary) calc(51% - 2px),
-		var(--line-color) calc(51% - 2px),
-		var(--line-color) 51%,
-		transparent 51%);
+	@include envelope-half(right, var(--line-color), calc(51%));
+}
+
+.envelope-left-front
+{
+	@include envelope-half(left, var(--bg-secondary), calc(51% - 2px));
+}
+
+.envelope-right-front
+{
+	@include envelope-half(right, var(--bg-secondary), calc(51% - 2px));
 }

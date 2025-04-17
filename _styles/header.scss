@@ -16,15 +16,6 @@ header
 	letter-spacing: var(--header-letter-spacing);
 }
 
-header a
-{
-	line-height: var(--header-line-height);
-	letter-spacing: var(--header-letter-spacing);
-	color: var(--accent);
-	text-decoration: none;
-	align-content: center;
-}
-
 .header-title
 {
 	@include title-text;

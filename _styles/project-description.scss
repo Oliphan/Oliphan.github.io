@@ -1,7 +1,7 @@
 .project-description
 {
 	scroll-snap-align: center;
-	min-width: min(800px, 90vw);
+	min-width: min(2000px, 70vw);
 	border-width: 0 2px;
   	border-style: outset;
   	border-color: var(--highlight);
@@ -42,7 +42,7 @@
 	}
 
 	@media only screen and (max-width: 800px) {
-		min-width: max(568px, 90vw);
+		min-width: max(568px, 70vw);
 	}
 
 	@media only screen and (max-width: 568px)

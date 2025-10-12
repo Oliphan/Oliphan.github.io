@@ -11,12 +11,8 @@ body
 	@include flex(column, 1 1 auto);
 	margin: 0px;
 	height: 100%;
-}
-
-body
-{
-	background-color: var(--bg-primary); // Fallback
 	background: radial-gradient(var(--bg-primary-gradient) 50%, var(--bg-primary) 100%);
+	background-color: var(--bg-primary); // Fallback
 	
 	// Helper for smooth scroll only on page body hover to fix firefox smooth 
 	// scroll snap bugginess when adjusting window dimensions.
@@ -60,11 +56,21 @@ head *
 .page-content
 {
 	@include flex(column, 1 1 auto);
-	width: min(800px, 90%);
+	width: min(2000px, 70%);
 	margin-left: auto;
 	margin-right: auto;
 	transition: all var(--standard-transition-timing);
 	padding: 50px 0;
+
+    @media only screen and (max-width: 800px)
+    {
+        width: max(568px, 70%);
+    }
+
+    @media only screen and (max-width: 568px)
+    {
+        width: 100%;
+    }
 }
 
 img
@@ -130,18 +136,3 @@ section
 	@include foregroundPanel;
 }
 
-@media only screen and (max-width: 800px)
-{
-	.page-content
-	{
-		width: max(568px, 90%);
-	}
-}
-
-@media only screen and (max-width: 568px)
-{
-	.page-content
-	{
-		width: 100%;
-	}
-}

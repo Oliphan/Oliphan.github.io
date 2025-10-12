@@ -60,7 +60,9 @@
 
 .envelope-contents-body
 {
-	@include highlight-glow;
+	@include smooth-border;
+	border-color: var(--accent);
+	filter: drop-shadow(0px 0px 8px var(--highlight));
 }
 
 @keyframes open-envelope-contents

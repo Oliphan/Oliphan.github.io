@@ -56,7 +56,7 @@ head *
 .page-content
 {
 	@include flex(column, 1 1 auto);
-	width: 70%;
+	width: min(2000px, 70%);
 	margin-left: auto;
 	margin-right: auto;
 	transition: all var(--standard-transition-timing);

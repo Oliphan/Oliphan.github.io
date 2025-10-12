@@ -1,7 +1,7 @@
 .project-description
 {
 	scroll-snap-align: center;
-	min-width: 70vw;
+	min-width: min(2000px, 70vw);
 	border-width: 0 2px;
   	border-style: outset;
   	border-color: var(--highlight);

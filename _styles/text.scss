@@ -45,6 +45,11 @@ li
 	}
 }
 
+a:hover
+{
+    filter: drop-shadow(var(--faint-glow) 0px 0px 4px);
+}
+
 h1
 {
 	@include title-text;

@@ -9,7 +9,7 @@
 	left: 0;
 	top: 0;
 	bottom: 0;
-	color: var(--bg-secondary);
+	color: var(--faint-glow);
 	perspective: 100px;
 	background: radial-gradient(var(--bg-primary-gradient) 50%, var(--bg-primary) 100%);
 }
@@ -26,6 +26,7 @@
 	top: 0;
 	left: 0;
 	position: relative;
+    filter: drop-shadow(var(--faint-glow) 0px 0px 8px);
 }
 
 @function CalcRand($range, $offset, $unit: null)

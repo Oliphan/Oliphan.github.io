@@ -11,12 +11,8 @@ body
 	@include flex(column, 1 1 auto);
 	margin: 0px;
 	height: 100%;
-}
-
-body
-{
-	background-color: var(--bg-primary); // Fallback
 	background: radial-gradient(var(--bg-primary-gradient) 50%, var(--bg-primary) 100%);
+	background-color: var(--bg-primary); // Fallback
 	
 	// Helper for smooth scroll only on page body hover to fix firefox smooth 
 	// scroll snap bugginess when adjusting window dimensions.

@@ -31,7 +31,7 @@ nav
 		top: 0;
 	}
 
-	ol
+	> ol
 	{
 		position: absolute;
 		top: var(--header-height);
@@ -98,6 +98,26 @@ nav
 			@include active-press;
 		}
 	}
+
+    @media only screen and (min-width: 768px)
+    {
+        .sub-nav-root
+        {
+            overflow-y: auto;
+            max-height: calc(100vh - var(--header-height));
+            filter: drop-shadow(0px 0px 8px black);
+
+            ol
+            {
+                position: static;
+            }
+            
+            li
+            {
+                position: static;
+            }
+        }
+    }
 
 	@media only screen and (max-width: 768px)
 	{

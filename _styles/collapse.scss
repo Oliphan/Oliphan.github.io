@@ -17,7 +17,7 @@
 	& > .collapse-content
 	{
 		display: flex;
-		height: 0;
+
 		width: 100%;
 		transition: all var(--standard-transition-timing);
 		opacity: 0;
@@ -35,11 +35,17 @@
 		}
 	}
 
+    &:not(:focus-within) {
+        & .collapse-content
+        {
+		    height: 0;
+        }
+    }
+
 	&:focus-within
 	{
 		& > .collapse-content
 		{
-			height: 100%;
 			opacity: 1;
 			pointer-events: all;
 

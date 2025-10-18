@@ -6,7 +6,7 @@
 		{% if include.next != nil %}
 			<a class="next" href={{ include.next }}>&gt;</a>
 		{% endif %}
-		<img src={{ include.image }} alt={{ include.imageAlt }} style="{{ include.imgStyle }}" />
+		<img referrerpolicy="noreferrer" src={{ include.image }} alt={{ include.imageAlt }} style="{{ include.imgStyle }}" />
 	</div>
 	<h3 class="small-padding"><a href={{ include.href }}>{{ include.title }}</a></h3>
 	<div class="description small-padding col">

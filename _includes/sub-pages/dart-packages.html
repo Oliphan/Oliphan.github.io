@@ -1,0 +1,66 @@
+<div class="foreground-panel small-v-padding med-h-padding">
+	<p>
+		While working on personal projects with Flutter I have made and published a number of Dart packages to provide utilities for serialization, resource management, etc.
+	</p>
+    <p>
+		Most will be listed here, but for a fully up-to-date list please check out my <a href="https://pub.dev/publishers/liamrobinson.co.uk/packages">publisher page on pub.dev</a>.
+	</p>
+</div>
+
+<section>
+	<a href="https://pub.dev/packages/auto_json_converter"><h2>auto_json_converter</h2></a>
+
+	<div class="foreground-panel small-v-padding med-h-padding col">
+<pre><code class="dart">@JsonSerializable()
+@AutoJsonConverter()
+class Example {
+  String name;
+
+  Example(this.name);
+
+  factory Example.fromJson(Map&lt;String, dynamic&gt; json) =&gt;
+      _$ExampleFromJson(json);
+
+  Map&lt;String, dynamic&gt; toJson() =&gt; _$ExampleToJson(this);
+}</code></pre>
+
+		<p>
+			Provides code generation to reduce boilerplate when working with JSON serialization via JsonConverters from the <a href="https://pub.dev/packages/json_serializable">json_serializable</a> package.
+		</p>
+	</div>
+</section>
+
+<section>
+	<a href="https://pub.dev/packages/disposable_resource_management"><h2>disposable_resource_management</h2></a>
+
+	<div class="foreground-panel small-v-padding med-h-padding col">
+<pre><code class="dart">void main() async {
+  final ffi = SomeAsyncFFIInteropService();
+
+  final resourceManager = AsyncResourceManager&lt;SomeFFIWrapper&gt;(
+    loadResource: () =&gt; SomeFFIWrapper.create(ffi),
+    releaseResource: (wrapper) =&gt; wrapper.disposeAsync(),
+  );
+
+  // The resource gets obtained on the first obtainToken() call.
+  final token1 = await resourceManager.obtainToken();
+
+  // We can also propagate the token to get another token.
+  // This is done synchronously, since propagation isn't allowed for disposed
+  // tokens and therefore does not require loading the resource as it is
+  // guaranteed to already be loaded.
+  final token2 = token1.propagate();
+
+  // The resource will not be released yet because the propagated token2 still
+  // is not disposed.
+  await token1.disposeAsync();
+
+  // The resource gets released when all tokens for the resource are disposed.
+  await token2.disposeAsync();
+}</code></pre>
+
+		<p>
+			Provides base types and utilities for managing the loading and disposal of resources. For example when working with packages that do so via <a href="https://pub.dev/packages/ffi">ffi</a> such as <a href="https://pub.dev/packages/flutter_soloud">flutter_soloud</a>.
+		</p>
+	</div>
+</section>

@@ -46,10 +46,20 @@
 	</div>
 
 	<div class="carousel top-m1 foreground-panel smooth-scroll-fixed">
+        {% include project-description.html
+			image="https://drive.google.com/thumbnail?id=17eENpCZcxNtM3NJIuUkcA6t_wHhT31Cu&sz=w2000"
+			imageAlt="\"A screenshot of the liamrobinson.co.uk publisher page on pub.dev.\""
+			id="dart-packages-description"
+			next="#this-website-description"
+			href="#dart-packages"
+			title="Dart Packages"
+			description="While working on personal projects with Flutter I have developed and published a number of Dart packages to provide utilities for serialization, resource management, etc." %}
+
 		{% include project-description.html
 			image="https://drive.google.com/thumbnail?id=1irzOLccqmo25AGmKOv141FUyxPkAeL_3&sz=w2000"
 			imageAlt="\"A screenshot of this website.\""
 			id="this-website-description"
+            previous="#dart-packages-description"
 			next="#sacrifices-must-be-made-description"
 			href="#this-website"
 			title="This Website"

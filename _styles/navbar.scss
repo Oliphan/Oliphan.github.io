@@ -62,7 +62,7 @@ nav
 		cursor: pointer;
 		border-style: solid;
 		border-width: 0px 2px;
-		border-color: var(--highlight);
+		border-color: transparent;
 		min-height: var(--header-height);
         margin: 0px 1px;
 
@@ -99,9 +99,13 @@ nav
 		}
 	}
 
-    @media only screen and (min-width: 768px)
-    {
-        .sub-nav-root
+    .sub-nav-root{
+        background-color: var(--bg-primary-gradient);
+        filter: drop-shadow(0px 0px 8px black);
+        z-index: 1;
+        @include smooth-border;
+
+        @media only screen and (min-width: 768px)
         {
             overflow-y: auto;
             max-height: calc(100vh - var(--header-height));
@@ -153,6 +157,13 @@ nav
 			justify-content: start;
 			position: static;
             
+            &.primary-nav
+            {
+                border-radius: 0px 0px var(--standard-border-radius) var(--standard-border-radius);
+                margin-bottom: auto;
+                background-color: var(--bg-primary-gradient);
+            }
+
             ol li {
                 margin: 0px;
             }

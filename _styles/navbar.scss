@@ -101,6 +101,8 @@ nav
 
     .sub-nav-root{
         background-color: var(--bg-primary-gradient);
+        filter: drop-shadow(0px 0px 8px black);
+        z-index: 1;
         @include smooth-border;
 
         @media only screen and (min-width: 768px)

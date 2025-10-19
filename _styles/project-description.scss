@@ -2,9 +2,6 @@
 {
 	scroll-snap-align: center;
 	min-width: min(2000px, 70vw);
-	border-width: 0 2px;
-  	border-style: outset;
-  	border-color: var(--highlight);
 
 	& > .image-container
 	{
@@ -13,9 +10,9 @@
 		border-width: 0 0 2px 0;
 		border-color: var(--highlight);
 		position: relative;
-		height: min(370px, 100%);
-		min-height: min(370px, 100%);
-		max-height: min(370px, 100%);
+		height: 370px;
+		min-height: 370px;
+		max-height: 370px;
 
 		& > img
 		{

@@ -3,6 +3,7 @@
 	@include flex(column, 1 1 auto);
 	perspective: 100px;
 	align-items: normal;
+    max-width: 400px;
 }
 
 .envelope-holder:active *
@@ -40,7 +41,6 @@
 	bottom: 1em;
 	left: 1em;
 	right: 1em;
-	word-wrap: break-word;
 	justify-content: center;
 	align-items: center;
 	word-wrap: break-word;

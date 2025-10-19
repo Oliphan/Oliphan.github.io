@@ -61,6 +61,7 @@ head *
 	margin-right: auto;
 	transition: all var(--standard-transition-timing);
 	padding: 50px 0;
+    filter: drop-shadow(0px 0px 16px var(--drop-shadow-color));
 
     @media only screen and (max-width: 800px)
     {
@@ -124,15 +125,10 @@ section
 @mixin foregroundPanel
 {
 	@include smooth-border;
-	background-color: var(--bg-secondary);
-	box-shadow: 0.5em 1em 1.5em 0em var(--drop-shadow-color);
-	border-color: var(--highlight);
-	border-style: outset;
-	border-width: 2px;
+	background-color: var(--bg-primary-gradient);
 }
 
 .foreground-panel
 {
 	@include foregroundPanel;
 }
-

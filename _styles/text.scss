@@ -41,7 +41,9 @@ pre:has(code.dart) {
     white-space: pre-wrap;
     margin: auto;
     padding: 16px;
-    box-shadow: 0px 0px 8px var(--bg-primary-gradient) inset;
+    border-color: var(--highlight);
+	border-style: outset;
+	border-width: 2px;
 
     @media only screen and (max-width: 1000px)
     {
